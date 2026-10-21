@@ -1250,17 +1250,17 @@ const WEEKS={
     feel:'Funky, jazzy, hopeful. Natural minor with C♯ instead of C.',
     progs:[['Dorian vamp','i–IV',['Em','A']],['Two minors','i7–ii7',['Em7','F♯m7']],['Dorian loop','i–IV–♭VII',['Em','A','D']]]},
  6:{s:'phryg',sub:'Minor pentatonic + 2 notes',newIv:[1,8],newTxt:'adds F (♭2) and C (♭6)',
-    feel:'Dark and Spanish. F sits one fret above every E, so lean on that half step.',
+    feel:'Dark and heavy, the metal minor. F sits one fret above every E, so lean on that half step.',
     progs:[['Phrygian vamp','i–♭II',['Em','F']],['Flamenco walk','i–♭II–i–♭vii',['Em','F','Em','Dm']],['Climb','i–♭II–♭III–♭II',['Em','F','G','F']]]},
- 7:{s:'harm',sub:'Minor pentatonic + 2 notes, 1 moved',newIv:[2,8,11],newTxt:'adds F♯ (2) and C (♭6); D moves up one fret to D♯ (7)',
+ 7:{s:'harm',sub:'Minor pentatonic + 2 notes, 1 moved',newIv:[2,8,11],moved:[11],newTxt:'adds F♯ (2) and C (♭6); D moves up one fret to D♯ (7)',
     feel:'Tense and exotic. The D♯ pulls hard back to E.',
-    progs:[['Minor cadence','i–iv–V7',['Em','Am','B7']],['Andalusian','i–♭VII–♭VI–V',['Em','D','C','B']],['Dramatic','i–♭VI–V7',['Em','C','B7']]]},
+    progs:[['Minor cadence','i–iv–V7',['Em','Am','B7']],['Andalusian · D over D, D♯ over B','i–♭VII–♭VI–V',['Em','D','C','B']],['Dramatic','i–♭VI–V7',['Em','C','B7']]]},
  8:{s:'majPent',sub:'Minor pentatonic shapes, 3 frets down',newIv:[],newTxt:'No new shapes. Play your minor boxes 3 frets lower and land on E',
     feel:'Bright and country-sweet. Same five shapes, new home note.',
     progs:[['Three-chord','I–IV–V',['E','A','B']],['Pop four','I–V–vi–IV',['E','B','C♯m','A']],['Two-chord vamp','I–IV',['E','A']]]},
  9:{s:'major',sub:'Slid-down shapes + 2 notes',newIv:[5,11],newTxt:'adds A (4) and D♯ (7)',
     feel:'The reference scale. A sits one fret above each G♯; D♯ one fret below each E.',
-    progs:[['Three-chord','I–IV–V',['E','A','B']],['Doo-wop','I–vi–IV–V',['E','C♯m','A','B']],['Jazz cadence','ii–V–I',['F♯m','B','E','E']]]},
+    progs:[['Three-chord','I–IV–V',['E','A','B']],['Doo-wop','I–vi–IV–V',['E','C♯m','A','B']],['Jazz cadence','ii–V7–I',['F♯m','B7','E','E']]]},
  10:{s:'mixo',sub:'Slid-down shapes + 2 notes',newIv:[5,10],newTxt:'adds A (4) and D (♭7)',
     feel:'Classic rock and jam-band. Major with D instead of D♯.',
     progs:[['Rock cadence','I–♭VII–IV',['E','D','A']],['Two-chord vamp','I–♭VII',['E','D']],['Mixo turn','I–v–IV',['E','Bm','A']]]},
@@ -1533,10 +1533,14 @@ const ICON={
   play:'<svg aria-hidden="true" viewBox="0 0 16 16"><path d="M4 2.5v11l9.5-5.5z"/></svg>',
   stop:'<svg aria-hidden="true" viewBox="0 0 16 16"><rect x="3.5" y="3.5" width="9" height="9" rx="1.5"/></svg>',
   lock:'<svg aria-hidden="true" viewBox="0 0 12 12" fill="currentColor"><path d="M3.5 5V3.8a2.5 2.5 0 015 0V5h.5a1 1 0 011 1v4a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1 0h3V3.8a1.5 1.5 0 00-3 0z"/></svg>',
-  tick:'<svg aria-hidden="true" viewBox="0 0 14 14"><path d="M3 7.5l2.6 2.6L11 4.5"/></svg>'
+  tick:'<svg aria-hidden="true" viewBox="0 0 14 14"><path d="M3 7.5l2.6 2.6L11 4.5"/></svg>',
+  mic:'<svg class="gi" aria-hidden="true" viewBox="0 0 12 12"><rect x="4.2" y="1.2" width="3.6" height="6" rx="1.8"/><path d="M2.6 5.6a3.4 3.4 0 006.8 0M6 9v1.8"/></svg>'
 };
 function wkPositions(w){const W=WEEKS[w],all=positions(SCALES[W.s],hk());return W.only?all.slice(0,W.only):all}
 const learned=(w,i)=>!!S.pos[w+'-'+i];
+/* Pace: each week has up to 3 core boxes (1–3); boxes 4–5 are optional stretch. The roadmap and unlocking count core only. */
+const CORE_N=3;const coreN=w=>{let n=5;try{n=wkPositions(w).length}catch(e){}return Math.min(CORE_N,n)};const isCore=(w,i)=>i<coreN(w);
+const coreDone=w=>[...Array(coreN(w)).keys()].every(i=>learned(w,i));
 function dayItems(){const k=UI.week+':'+today();if(!S.days[k])S.days[k]=[false,false,false];return S.days[k]}
 function phaseOf(w){return PHASES.findIndex(p=>p.weeks.includes(w))}
 function nextAction(){
@@ -1703,7 +1707,7 @@ const MAJ_KEYS=['C','D♭','D','E♭','E','F','F♯','G','A♭','A','B♭','B'];
 const MIN_KEYS=['C','C♯','D','E♭','E','F','F♯','G','G♯','A','B♭','B'];
 const LBL={minPent:'Minor pentatonic',majPent:'Major pentatonic',blues:'Blues',natMin:'Natural minor',major:'Major',
   dorian:'Dorian',mixo:'Mixolydian',harm:'Harmonic minor',phryg:'Phrygian',lyd:'Lydian'};
-const FAMILIES=[['Pentatonic',['minPent','majPent','blues']],['Full scales',['natMin','major']],['Modes',['dorian','mixo','harm','phryg','lyd']]];
+const FAMILIES=[['Pentatonic',['minPent','majPent','blues']],['Full scales',['natMin','major']],['Modes & minor variants',['dorian','mixo','harm','phryg','lyd']]];
 const BOXC=['#0A84FF','#AF52DE','#FF2D55','#30B0C7','#8BC34A'],BOXT=['#fff','#fff','#fff','#fff','#1C1C1E'];
 function keyName(sk,k){return(MINOR.includes(sk)?MIN_KEYS:MAJ_KEYS)[k]}
 function spell(sc,root){
@@ -2303,7 +2307,7 @@ function drawXProg(){
 }
 let X_MINOR=true;
 const SNAME=['low E','A','D','G','B','high e'];
-function shapeName(sh,minor){if(!sh||!sh.cag)return'?';return sh.cag+(minor&&(sh.cag==='E'||sh.cag==='A')?'m':'')}
+function shapeName(sh,minor){if(!sh||!sh.cag)return'?';if(!minor)return sh.cag;return sh.cag==='E'||sh.cag==='A'?sh.cag+'m':sh.cag+'m-form'}
 function prevPos(all,i){
   if(i>0)return all[i-1];
   const p=all[all.length-1].map(n=>({...n,f:n.f-12,m:n.m-12}));
@@ -2460,10 +2464,10 @@ const LN_LADDER=[
   {s:'minPent',rel:0,tag:'Foundation',how:'5 notes, no wrong ones. The home base of rock and blues.'},
   {s:'blues',rel:0,from:'minPent',tag:'+1 note',how:'Add the ♭5, the "blue note": tension that slides into the 5.'},
   {s:'natMin',rel:0,from:'minPent',tag:'+2 notes',how:'Add the 2 and ♭6. Fuller and sadder: the classic minor scale.'},
-  {s:'dorian',rel:0,from:'natMin',tag:'Change 1',how:'Raise the ♭6 to a 6. Still minor, but brighter: funk, jazz, Santana.'},
-  {s:'phryg',rel:0,from:'natMin',tag:'Change 1',how:'Lower the 2 to ♭2. Dark and tense: Spanish and metal flavor.'},
-  {s:'harm',rel:0,from:'natMin',tag:'Change 1',how:'Raise the ♭7 to a 7. A strong pull back home: exotic, classical.'},
-  {s:'majPent',rel:3,from:'minPent',tag:'Same notes',how:'The same 5 notes, starting from the ♭3. Same shapes, happy sound.'},
+  {s:'dorian',rel:0,from:'natMin',tag:'Change 1 · +2 vs pentatonic',how:'Raise the ♭6 to a 6. Still minor, but brighter: funk, jazz, Santana.'},
+  {s:'phryg',rel:0,from:'natMin',tag:'Change 1 · +2 vs pentatonic',how:'Lower the 2 to ♭2. Dark and heavy: the metal minor. (The "Spanish" sound also raises the ♭3 to 3: that’s Phrygian dominant.)'},
+  {s:'harm',rel:0,from:'natMin',tag:'Change 1 · +2, 1 moved vs pentatonic',how:'Raise the ♭7 to a 7. A strong pull back home: exotic, classical.'},
+  {s:'majPent',rel:3,from:'minPent',tag:'Same notes',how:'Same notes, new home (relative): G major pentatonic is E minor pentatonic started from G. In the Weeks you also play E major pentatonic: same home, new notes (parallel).'},
   {s:'major',rel:3,from:'majPent',tag:'+2 notes',how:'Add the 4 and 7: the major scale, do-re-mi.'},
   {s:'mixo',rel:3,from:'major',tag:'Change 1',how:'Lower the 7 to ♭7. Major with attitude: rock and blues riffs.'},
   {s:'lyd',rel:3,from:'major',tag:'Change 1',how:'Raise the 4 to ♯4. Dreamy and floating: film scores.'}];
@@ -2585,11 +2589,11 @@ function renderWeekly(){
   // yellow list: all weeks by phase
   h+=`<aside class="ycard"><div class="yh"><h3>Weeks</h3><span>${nDone}/11</span></div><div class="ylist">`;
   PHASES.forEach(p=>{const pd=p.weeks.filter(k=>S.done[k]).length;h+=`<div class="yp">${p.n}<span>${pd}/${p.weeks.length}</span></div>`;p.weeks.forEach(k=>{const dn=S.done[k],cu=k===S.current,WK=WEEKS[k],nn=WK.newIv.filter(v=>v!==0).length;
-    h+=`<button class="wk${k===w?' sel':''}" data-w="${k}" aria-label="Week ${k}: ${wkScName(WK.s)}, ${WK.sub}" title="${WK.sub}"><span class="wn${dn?' dn':''}">${dn?'✓':k}</span><span class="wt"><b>${wkScName(WK.s)}${WKDUP[k]?`<em class="wsub">${WKDUP[k]}</em>`:''}</b>${ivStrip(SCALES[WK.s].iv,WK.newIv)}</span>${cu&&!dn?'<i class="now">Now</i>':nn?`<i class="plus">+${nn}</i>`:''}</button>`})});
+    h+=`<button class="wk${k===w?' sel':''}" data-w="${k}" aria-label="Week ${k}: ${wkScName(WK.s)}, ${WK.sub}" title="${WK.sub}"><span class="wn${dn?' dn':''}">${dn?'✓':k}</span><span class="wt"><b>${wkScName(WK.s)}${WKDUP[k]?`<em class="wsub">${WKDUP[k]}</em>`:''}</b>${ivStrip(SCALES[WK.s].iv,WK.newIv)}</span>${cu&&!dn?'<i class="now">Now</i>':nn?`<i class="plus">+${nn-(WK.moved||[]).length}${(WK.moved||[]).length?' ↑'+WK.moved.length:''}</i>`:''}</button>`})});
   h+=`</div><div class="ylegend"><span><i style="background:var(--root)"></i>Root</span><span><i></i>In scale</span><span><i style="background:none;box-shadow:inset 0 0 0 1.5px var(--label)"></i>New</span><span>+N new notes</span></div></aside>`;
   // tiles: one card per box
   h+=`<div class="tiles" style="--n:${P.length}">${P.map((b,i)=>{const sh=chordShape(b,triOf(W.s)),on=UI.sel.includes(i+':0')||UI.sel.includes(i+':1');
-    return `<button class="tile hit${on?' on':''}" data-hp="${i}" data-ho="0" style="--c:${BOXC[i%5]};--ct:${BOXT[i%5]}" aria-pressed="${on}"><div class="tt"><span class="tic">${i+1}</span><span class="tn"><b>${P.length===1?'Open':'Box '+(i+1)}</b><small>${shapeName(sh,MINOR.includes(W.s))}</small></span>${ARW(learned(w,i))}</div><div class="tch">${boxVert(b,i%5,names)}</div></button>`}).join('')}</div></div>`;
+    return `<button class="tile hit${on?' on':''}" data-hp="${i}" data-ho="0" style="--c:${BOXC[i%5]};--ct:${BOXT[i%5]}" aria-pressed="${on}"><div class="tt"><span class="tic">${i+1}</span><span class="tn"><b>${P.length===1?'Open':'Box '+(i+1)}</b><small>${shapeName(sh,MINOR.includes(W.s))}${isCore(w,i)?'':' · stretch'}</small></span>${ARW(learned(w,i))}</div><div class="tch">${boxVert(b,i%5,names)}</div></button>`}).join('')}</div></div>`;
 
   // Level 3: modules
   h+=hvHTML()+`<div class="mods${modsCls()}">`;
@@ -2610,7 +2614,7 @@ function renderWeekly(){
     <div class="key-l">${UI.label==='finger'?(PIANO()?`<span><b>1–5</b>&nbsp;thumb → pinky · ${PF_HAND==='R'?'right':'left'} hand · thumb never on a black key</span>`:'<span><b>1–4</b>&nbsp;index → pinky, 0 = open</span>')+(UI.view==='bridge'||UI.sel.length>1?'<span><b>Small tag</b>&nbsp;= same note, finger in the other box</span>':''):''}<span><i style="background:var(--root)"></i>Root (${HKN})</span><span><i style="background:${BOXC[UI.pos%5]}"></i>Box ${UI.pos+1} notes</span>${W.newIv.filter(v=>v!==0).length?'<span>'+STAR_SVG+'&nbsp;New this week</span>':''}${UI.view==='bridge'?'<span><i style="background:none;box-shadow:inset 0 0 0 2px var(--ok)"></i>Shared</span><span><i style="background:none;box-shadow:inset 0 0 0 1.5px var(--label2)"></i>Next box</span>':''}</div>
     <div class="row"><div class="seg" role="group" aria-label="Detail level"><button data-detail="clean" class="${CLEAN()?'on':''}">Clean</button><button data-detail="detail" class="${CLEAN()?'':'on'}">Detailed</button></div><div class="seg" role="group" aria-label="Dot labels"><button data-lab="note" class="${UI.label==='note'?'on':''}">Notes</button><button data-lab="iv" class="${UI.label==='iv'?'on':''}">Intervals</button><button data-lab="finger" class="${UI.label==='finger'?'on':''}">Fingers</button>${PIANO()&&UI.label==='finger'?`</div><div class="seg pfh" role="group" aria-label="Hand"><button data-pfh="R" class="${PF_HAND==='R'?'on':''}" title="Right hand">RH</button><button data-pfh="L" class="${PF_HAND==='L'?'on':''}" title="Left hand">LH</button>`:''}</div><span class="spacer"></span>
     <button class="btn ghost" id="scaleBtn">Play</button></div>
-    <div class="row"><button class="btn ${curL?'ok':''}" id="learnBtn" style="flex:1">${curL?'Learned ✓':'Mark box learned'}</button></div>
+    <div class="row">${curL?`<button class="btn ok" id="learnBtn" style="flex:1">Learned ✓</button>`:`<button class="btn" id="chkBtn" style="flex:1">${ICON.mic||''}Check this box · play it up and down</button><button class="btn ghost" id="learnBtn" title="No mic? Mark it learned yourself">Mark learned</button>`}</div>${isCore(UI.week,UI.pos)?'':'<p class="hint">Stretch box: optional. Your roadmap counts boxes 1–3 of each week.</p>'}
   </div></div>`;
 
   h+=smHTML('m9')+licksHTML()+shapesHTML('m8');
@@ -2695,13 +2699,13 @@ const SRI=[1,2,4,7,14,30,60];
 function srsSave(){try{localStorage.setItem('kr-srs',JSON.stringify(SRS))}catch(e){}}
 function srsItems(){return Object.keys(S.pos).filter(k=>S.pos[k]).map(k=>{if(!SRS[k])SRS[k]={n:0,due:today()};return{k,...SRS[k]}})}
 function srsDue(){const t=today();return srsItems().filter(x=>x.due<=t).sort((a,b)=>a.due<b.due?-1:a.due>b.due?1:0)}
-function srsGrade(k,ok){const c=SRS[k]||{n:0};c.n=ok?Math.min((c.n||0)+1,SRI.length-1):0;c.due=addDays(ok?SRI[c.n]:1);SRS[k]=c;srsSave();logAdd('r',1);return SRI[c.n]}
+function srsGrade(k,ok){const c=SRS[k]||{n:0};c.n=ok?Math.min((c.n||0)+1,SRI.length-1):Math.max(0,(c.n||0)-1);c.due=addDays(ok?SRI[c.n]:1);SRS[k]=c;srsSave();logAdd('r',1);return SRI[c.n]}
 function reviewHTML(){const due=srsDue(),all=srsItems();
   let h=`<div class="mod" id="m4"><div class="card"><div class="dh"><h3>Review</h3><span class="cnt${due.length?' hot':''}">${due.length} due</span></div>`;
   if(!due.length){const nx=all.map(x=>x.due).sort()[0];
     h+=`<div class="empty2">${all.length?`<b>All caught up</b>Next review ${nx===addDays(1)?'tomorrow':nx}`:`<b>Nothing to review yet</b>Learned boxes come back here after 1, 2, 4, 7, 14 and 30 days`}</div>`}
   else h+=`<div class="rv">${due.slice(0,4).map(x=>{const[w,i]=x.k.split('-').map(Number),W=WEEKS[w],P=wkPositions(w);if(!P[i])return'';const sh=chordShape(P[i],triOf(W.s));
-    return `<div class="rvi" style="--c:${BOXC[i%5]};--ct:${BOXT[i%5]}"><button class="rvo" data-rvo="${x.k}">${miniChord(sh,BOXC[i%5])}<span><b>Week ${w} · Box ${i+1}</b><small>${wkScName(W.s)}</small></span></button><div class="rvb"><button class="btn ghost sm" data-rvg="${x.k}" data-ok="0">Shaky</button><button class="btn sm" data-rvg="${x.k}" data-ok="1">Solid</button></div></div>`}).join('')}</div>`;
+    return `<div class="rvi" style="--c:${BOXC[i%5]};--ct:${BOXT[i%5]}"><button class="rvo" data-rvo="${x.k}">${miniChord(sh,BOXC[i%5])}<span><b>Week ${w} · Box ${i+1}</b><small>${wkScName(W.s)}</small></span></button><div class="rvb"><button class="btn sm" data-rvc="${x.k}">${ICON.mic||''}Check</button><span class="rvself"><button class="linkbtn" data-rvg="${x.k}" data-ok="0">Shaky</button><button class="linkbtn" data-rvg="${x.k}" data-ok="1">Solid</button></span></div></div>`}).join('')}</div><p class="hint">Check plays it blind: no diagram, the mic listens for the box up and down. No mic? Rate it yourself.</p>`;
   return h+`</div></div>`}
 
 /* ============ EAR TRAINING ============ */
@@ -2719,12 +2723,11 @@ function earPlay(){if(!UI.ear||UI.ear.res!=null)return earNew();const c=ac(),t=c
 const SONGS={'i–♭VI–♭III–♭VII':[['Zombie','The Cranberries'],['Save Tonight','Eagle-Eye Cherry']],
   'i–♭VII–♭VI–♭VII':[['All Along the Watchtower','Jimi Hendrix']],
   'I–IV–V':[['Wild Thing','The Troggs'],['La Bamba','Ritchie Valens'],['Pride and Joy','Stevie Ray Vaughan']],
-  'i–iv–v':[['The Thrill Is Gone','B.B. King']],
   'i–IV':[['Oye Como Va','Santana'],['Evil Ways','Santana']],
   'i–ii':[['Moondance','Van Morrison']],
-  'i–♭II':[['White Rabbit','Jefferson Airplane'],['Misirlou','Dick Dale']],
+  'i–♭II':[['Misirlou','Dick Dale · Phrygian dominant: play G♯ instead of G'],['White Rabbit','Jefferson Airplane · same G♯ swap']],
   'i–♭VII–♭VI–V':[['Hit the Road Jack','Ray Charles'],['Walk, Don’t Run','The Ventures']],
-  'i–♭VI–V':[['Smooth','Santana']],
+  'i–♭VI–V':[['Smooth','Santana'],['The Thrill Is Gone','B.B. King']],
   'I–V–vi–IV':[['Let It Be','The Beatles'],['With or Without You','U2'],['No Woman, No Cry','Bob Marley']],
   'I–vi–IV–V':[['Stand By Me','Ben E. King'],['Every Breath You Take','The Police']],
   'ii–V–I':[['Autumn Leaves','Jazz standard'],['Fly Me to the Moon','Frank Sinatra']],
@@ -2769,12 +2772,13 @@ function lsTick(){LS.raf=requestAnimationFrame(lsTick);const now=performance.now
 function lsNote(m){const c=listenCtx(),inS=c?c.iv.includes(((m-c.pc)%12+12)%12):null;
   LS.tot++;if(inS)LS.hits++;logAdd('n',1);LS.heard={m,inS};
   const R=LS.run;if(R){const t=R.seq[R.i];if(m===t.m){R.i++;R.prev=m;if(R.i>=R.seq.length){const secs=Math.round((performance.now()-R.t0)/1000),clean=R.miss<=2;let gap=null;
-        if(clean&&R.k&&S.pos[R.k])gap=srsGrade(R.k,true);logAdd('runs',1);LS.done={label:R.label,n:R.seq.length,miss:R.miss,secs,clean,gap};LS.run=null;
+        if(R.k&&R.check&&clean&&!S.pos[R.k]){S.pos[R.k]=true;SRS[R.k]={n:0,due:addDays(1)};srsSave();save();R.learned=true}else if(R.k&&R.review){gap=clean?srsGrade(R.k,true):(srsGrade(R.k,false),null)}else if(clean&&R.k&&S.pos[R.k])gap=srsGrade(R.k,true);
+        logAdd('runs',1);LS.done={label:R.label,n:R.seq.length,miss:R.miss,secs,clean,gap,check:R.check,review:R.review,learned:R.learned,k:R.k};LS.run=null;if(typeof krAfterRun==='function')setTimeout(()=>krAfterRun(LS.done),0);
         const a=ac();pluck(76,a.currentTime+.05,1.2,.12);pluck(83,a.currentTime+.18,1.4,.1)}}
     else if(m!==R.prev&&!(t.ok||[]).includes(m)){R.miss++;R.prev=m}}
   lsMark();lsPanel()}
 function lsMark(){if(LS.run&&LS.run.lick){const q=LS.run.seq[LS.run.i];if(q)lkMark(q.li,q.li)}else if(LS.done&&typeof lkMark==='function')lkMark(-1);document.querySelectorAll('g.heard').forEach(x=>x.remove());document.querySelectorAll('#app svg[data-piano] .pk').forEach(k=>k.classList.remove('pkhr','pktg','out'));if(!LS.on&&!LS.heard)return;
-  const H=LS.heard,T=LS.run?LS.run.seq[LS.run.i]:null;
+  const H=LS.heard,T=LS.run&&!LS.run.blind?LS.run.seq[LS.run.i]:null;
   document.querySelectorAll('#app svg[data-geo]').forEach(sv=>{const[L,a,fw,Tp,G,hi]=sv.dataset.geo.split(' ').map(Number),pos=(s,f)=>(f<0||f>hi||(f>0&&f<a)||(f===0&&a!==1))?null:[f===0?L-15:L+(f-a+.5)*fw,Tp+(5-s)*G];let g='';
     if(T){const p=pos(T.s,T.f);if(p)g+=`<circle cx="${p[0]}" cy="${p[1]}" r="18" class="tg"/>`}
     if(H)for(let s=0;s<6;s++){const p=pos(s,H.m-STR[s]);if(p)g+=`<circle cx="${p[0]}" cy="${p[1]}" r="16" class="hr${H.inS===false?' out':''}"/>`}
@@ -2789,8 +2793,8 @@ function lsPanel(){let p=document.getElementById('lsp');if(!LS.on&&!LS.err){if(p
   const c=listenCtx(),H=LS.heard,pct=LS.tot?Math.round(LS.hits/LS.tot*100):null,L=LOG[today()]||{};
   if(LS.err){p.innerHTML=`<div class="lsh"><span class="lsd off"></span><b>Listen</b><span class="spacer"></span><button class="lsx" id="lsX" aria-label="Close"><svg class="gi" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 3l6 6M9 3l-6 6"/></svg></button></div>${micTabs('listen')}<p class="lserr">${LS.err}</p>`;document.getElementById('lsX').onclick=lsStop;micTabsBind(p);return}
   let run='';const R=LS.run,D=LS.done;
-  if(R)run=`<div class="lsrun"><div class="lsrh"><b>${R.label} run</b><span>next <em>${midiName(R.seq[R.i].m)}</em></span><button class="linkbtn" id="lsCancel">Stop</button></div><div class="lsdots">${R.seq.map((n,i)=>`<i class="${i<R.i?'d':i===R.i?'c':''}"></i>`).join('')}</div><small>${R.i}/${R.seq.length} · ${R.miss} miss${R.miss===1?'':'es'}</small></div>`;
-  else if(D)run=`<div class="lsrun done ${D.clean?'good':''}"><div class="lsrh"><b>${D.clean?'Clean run':'Run done'} ${D.clean?'✓':''}</b><span>${D.n} notes · ${D.miss} miss${D.miss===1?'':'es'} · ${D.secs}s</span></div>${D.gap?`<small>Review pushed to ${D.gap} day${D.gap>1?'s':''} out</small>`:''}<button class="btn sm" id="lsGo">Again</button></div>`;
+  if(R)run=`<div class="lsrun"><div class="lsrh"><b>${R.label} run</b><span>next <em>${R.blind?'?':midiName(R.seq[R.i].m)}</em></span><button class="linkbtn" id="lsCancel">Stop</button></div><div class="lsdots">${R.seq.map((n,i)=>`<i class="${i<R.i?'d':i===R.i?'c':''}"></i>`).join('')}</div><small>${R.i}/${R.seq.length} · ${R.miss} miss${R.miss===1?'':'es'}</small></div>`;
+  else if(D)run=`<div class="lsrun done ${D.clean?'good':''}"><div class="lsrh"><b>${D.clean?'Clean run':'Run done'} ${D.clean?'✓':''}</b><span>${D.n} notes · ${D.miss} miss${D.miss===1?'':'es'} · ${D.secs}s</span></div>${D.learned?'<small>Box learned. It comes back for review tomorrow.</small>':D.check&&!D.clean?'<small>More than 2 misses. Play it once more to pass.</small>':D.review&&!D.clean?'<small>Not yet: it comes back tomorrow.</small>':''}${D.gap?`<small>Review pushed to ${D.gap} day${D.gap>1?'s':''} out</small>`:''}<button class="btn sm" id="lsGo">Again</button></div>`;
   else if(c&&c.box)run=`<button class="btn sm lsstart" id="lsGo">Run ${c.box.label} · up and down</button>`;
   else run=`<small class="lshint">${UI.tab==='build'?'Notes light up on the neck':'Pick a box to run it with the mic'}</small>`;
   p.innerHTML=`<div class="lsh"><span class="lsd"></span><b>Listening</b><small>${c?c.name:''}</small><span class="spacer"></span><button class="lsx" id="lsX" aria-label="Stop listening"><svg class="gi" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 3l6 6M9 3l-6 6"/></svg></button></div>${micTabs('listen')}
@@ -2808,8 +2812,9 @@ document.addEventListener('mouseover',e=>{const t=e.target;if(!t.closest)return;
 /* =====================================================================
    v0.5 FEATURE MODULE — every feature here sits behind a Labs flag
    ===================================================================== */
-const APP={v:'0.30.0',stage:'Beta'};
+const APP={v:'0.31.0',stage:'Beta'};
 const CHANGELOG=[
+  {v:'0.31.0',d:'2026-10-21',items:['Pace: each week has 3 core boxes; boxes 4–5 are optional stretch. The next week unlocks when this week’s core boxes pass','Check a box by playing it up and down into the mic (no mic? mark it learned yourself)','Review checks play blind: no diagram, no next note. A miss steps back one level instead of starting over','Same box, new home: see any box with its relative root (E minor pentatonic = G major pentatonic)','Theory fixes: Phrygian dominant songs, Andalusian cadence, jazz ii–V–I, clearer box names']},
   {v:'0.30.0',d:'2026-10-21',items:['Design pass on every screen: calmer sentence-case labels, steady numbers, a clear keyboard focus ring, controls that respond to a press','Frosted-glass header and view switch; neutral volume slider; Week 1 box drawn larger','Phones: the beta button floats as a small chip; card titles stay on one line']},
   {v:'0.29.5',d:'2026-10-21',items:['Now on iPhone and Android too: install from the download page, same features, works offline','Phones: the header floats as a glass bar while you scroll','Microphone help matches your device']},
   {v:'0.29.4',d:'2026-10-21',items:['Cleaner layout: icons and labels centred everywhere, drawn arrows and close buttons','Weeks list tells repeated scales apart; Learn · Play · Review stays in reach','Feedback without a GitHub account (Copy feedback), neutral “not yet” badges','Starts faster: instrument sounds load on first use']},
@@ -2981,7 +2986,7 @@ const LK={
    e:[[[16,22],1],[[17,21],.5],[[16,19],1.5,'~']]},
  ly1:{n:'♯4 shimmer',why:'Circle around the ♯4 and resolve to the 5th. That is the floating, dreamy Lydian sound.',
    e:[[7,.5],[6,.5],[4,.5],[6,.5],[7,1.5,'~']]},
- ly2:{n:'Whole-step climb',why:'1 → 2 → 3 → ♯4: three whole steps in a row. Only Lydian has that run.',
+ ly2:{n:'Whole-step climb',why:'1 → 2 → 3 → ♯4: three whole steps in a row. Of these scales, only Lydian has that run.',
    e:[[0,.5],[2,.5],[4,.5],[6,.5],[7,.5],[11,.5],[12,1,'~']]}};
 const LICKLIB={minPent:['pm1','pm2','pm3','pm4'],blues:['bl1','bl2','pm1','pm2'],natMin:['nm1','nm2','pm1','pm3'],dorian:['do1','do2','pm1','pm2'],
   phryg:['ph1','ph2','pm3'],harm:['hm1','hm2','pm1'],majPent:['mp1','mp2','mp3'],major:['mj1','mj2','mp1','mp3'],mixo:['mx1','mx2','mp1'],lyd:['ly1','ly2','mp1']};
@@ -3972,21 +3977,21 @@ function bindViewToggle(){document.querySelectorAll('[data-vi]').forEach(b=>b.on
 
 
 /* ---------- Roadmap (overall progress) + Mastery panel ---------- */
-function rmData(){const wk=[];let tot=0,done=0;for(let w=1;w<=11;w++){if(!WEEKS[w])continue;let n=0;try{n=wkPositions(w).length}catch(e){n=5}const l=[...Array(n).keys()].filter(i=>learned(w,i)).length;wk.push({w,n,l,m:!!S.done[w]});tot+=n;done+=l}
+function rmData(){const wk=[];let tot=0,done=0,sTot=0,sDone=0;for(let w=1;w<=11;w++){if(!WEEKS[w])continue;let all=0;try{all=wkPositions(w).length}catch(e){all=5}const n=Math.min(CORE_N,all),l=[...Array(n).keys()].filter(i=>learned(w,i)).length;wk.push({w,n,l,m:!!S.done[w]});tot+=n;done+=l;sTot+=all-n;for(let i=n;i<all;i++)if(learned(w,i))sDone++}
   const pct=tot?Math.round(done/tot*100):0,cur=S.current||1;let next=null;for(const x of wk){if(x.w<cur)continue;const i=[...Array(x.n).keys()].find(i=>!learned(x.w,i));if(i!=null){next={w:x.w,i};break}}
   const shp=new Set(Object.keys(SHP.done||{}).filter(k=>SHP.done[k]).map(k=>k.replace(/\d+$/,''))),mem=Math.min(shp.size,20);
   let mins=0;for(let i=0;i<7;i++)mins+=dayMins(addDays(-i));
-  return{wk,tot,done,pct,cur,next,mem,mins:Math.round(mins)}}
-function roadmapHTML(){const D=rmData();let h=`<div class="rmap" data-rm role="button" tabindex="0" aria-label="Roadmap ${D.pct}% — open Mastery"><div class="rmh"><small>Roadmap</small><b>${D.pct}%</b><span>${D.done} of ${D.tot} boxes · Week ${D.cur} of 11</span><em>Mastery ›</em></div><div class="rmbar">`;
+  return{wk,tot,done,sTot,sDone,pct,cur,next,mem,mins:Math.round(mins)}}
+function roadmapHTML(){const D=rmData();let h=`<div class="rmap" data-rm role="button" tabindex="0" aria-label="Roadmap ${D.pct}% — open Mastery"><div class="rmh"><small>Roadmap</small><b>${D.pct}%</b><span>${D.done} of ${D.tot} core boxes · Week ${D.cur} of 11</span><em>Mastery ›</em></div><div class="rmbar">`;
   PHASES.forEach(P=>{h+=`<div class="rmph" style="flex:${P.weeks.length}"><div class="rmsegs">${P.weeks.map(w=>{const x=D.wk.find(y=>y.w===w)||{n:1,l:0},f=Math.round(x.l/x.n*100),cls=x.l===x.n?'done':w===D.cur?'cur':'';return `<i class="rmseg ${cls}" title="Week ${w}: ${x.l}/${x.n} boxes"><u style="width:${f}%"></u>${w===D.cur?'<b class="rmyou">▲</b>':''}</i>`}).join('')}</div><small>${P.n}</small></div>`});
   return h+`</div></div>`}
-function rmLineHTML(){const D=rmData();return `<div class="rmline" data-rm title="Roadmap ${D.pct}% · ${D.done} of ${D.tot} boxes"><i style="width:${Math.max(D.pct,1)}%"></i></div>`}
+function rmLineHTML(){const D=rmData();return `<div class="rmline" data-rm title="Roadmap ${D.pct}% · ${D.done} of ${D.tot} core boxes"><i style="width:${Math.max(D.pct,1)}%"></i></div>`}
 function ringSVG(v,col,lab,val,sub){const r=34,c=2*Math.PI*r,f=Math.max(0,Math.min(1,v));return `<div class="mring"><svg viewBox="0 0 84 84"><circle cx="42" cy="42" r="${r}" fill="none" stroke="var(--surface2)" stroke-width="9"/><circle cx="42" cy="42" r="${r}" fill="none" stroke="${col}" stroke-width="9" stroke-linecap="round" stroke-dasharray="${(c*f).toFixed(1)} ${c.toFixed(1)}" transform="rotate(-90 42 42)" class="mrfill"${f<=0?' opacity="0"':''}/><text x="42" y="47" text-anchor="middle" font-size="17" font-weight="800" fill="var(--label)">${Math.round(f*100)}%</text></svg><b>${lab}</b><span>${val}</span><small>${sub}</small></div>`}
 function openMastery(){const D=rmData();closeMastery();const m=document.createElement('div');m.id='mastery';m.className='mastery';
   const nx=D.next?`Week ${D.next.w} · ${wkScName(WEEKS[D.next.w].s)} · Box ${D.next.i+1}`:'Everything learned. Keep reviewing.';
   m.innerHTML=`<div class="mcard" role="dialog" aria-label="Mastery"><div class="mhd"><div><small>Mastery</small><h3>${D.pct}% of the roadmap</h3></div><button class="mclose" aria-label="Close"><svg class="gi" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 3l6 6M9 3l-6 6"/></svg></button></div>
-    <div class="mrings">${ringSVG(D.done/D.tot,'var(--lime)','Learn',`${D.done} / ${D.tot} boxes`,'Boxes marked learned')}${ringSVG(D.mem/20,'var(--chc)','Memorize',`${D.mem} / 20 shapes`,'Chord shapes memorized in Recall')}${ringSVG(D.mins/60,'var(--root)','Play',`${D.mins} / 60 min`,'Practice in the last 7 days')}</div>
-    <div class="mphase">${PHASES.map(P=>{const ws=D.wk.filter(x=>P.weeks.includes(x.w)),l=ws.reduce((a,x)=>a+x.l,0),n=ws.reduce((a,x)=>a+x.n,0);return `<div><span>${P.n}</span><i><u style="width:${n?l/n*100:0}%"></u></i><b>${l}/${n} boxes</b></div>`}).join('')}</div>
+    <div class="mrings">${ringSVG(D.done/D.tot,'var(--lime)','Learn',`${D.done} / ${D.tot} core boxes`,D.sDone?`+${D.sDone} stretch boxes`:'Boxes 1–3 of each week')}${ringSVG(D.mem/20,'var(--chc)','Memorize',`${D.mem} / 20 shapes`,'Chord shapes memorized in Recall')}${ringSVG(D.mins/60,'var(--root)','Play',`${D.mins} / 60 min`,'Practice in the last 7 days')}</div>
+    <div class="mphase">${PHASES.map(P=>{const ws=D.wk.filter(x=>P.weeks.includes(x.w)),l=ws.reduce((a,x)=>a+x.l,0),n=ws.reduce((a,x)=>a+x.n,0);return `<div><span>${P.n}</span><i><u style="width:${n?l/n*100:0}%"></u></i><b>${l}/${n} core</b></div>`}).join('')}</div>
     <div class="mprac">${chartHTML()}${(()=>{const d=dayItems(),nD=d.filter(Boolean).length,stk=streak(),due=srsDue().length;return heroStats([['Today',nD+'/3',nD===3],['Streak',stk+(stk===1?' day':' days'),stk>0],['Review',due+' due',null]])})()}</div>
     <div class="mnext"><div><small>Next step</small><b>${nx}</b></div>${D.next?'<button class="btn" id="mGo">Go<svg class="gi" viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5L8 6l-3.5 3.5"/></svg></button>':''}</div></div>`;
   document.body.appendChild(m);requestAnimationFrame(()=>m.classList.add('on'));
@@ -4028,9 +4033,10 @@ render();
   new MutationObserver(function(){var t=document.querySelector('.frame .top');if(t&&!t.dataset.ph&&scrollY>32)upd()}).observe(document.getElementById('app')||document.body,{childList:true});
 })();
 </script>
-<script>window.KR_CFG={"version":"0.30.0","expiryIso":"2027-02-01T08:00:00Z","expiryLabel":"January 31, 2027","warnDays":14,"licenseVersion":"beta-1","copyright":"© 2026 Zach Juveli. All rights reserved.","repo":"https://github.com/zjuv007/keyroom-beta"};</script>
+<script>window.KR_CFG={"version":"0.31.0","expiryIso":"2027-02-01T08:00:00Z","expiryLabel":"January 31, 2027","warnDays":14,"licenseVersion":"beta-1","copyright":"© 2026 Zach Juveli. All rights reserved.","repo":"https://github.com/zjuv007/keyroom-beta"};</script>
 <script src="webgate.js"></script>
 <script src="beta.js"></script>
 <script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+<script src="coach.js"></script>
 </body>
 </html>

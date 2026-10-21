@@ -63,3 +63,20 @@ input[type=range],.hub .svol input{accent-color:var(--label)}
   .dh h3{white-space:nowrap}
   .dh .lnct{flex-basis:100%;order:3;margin-left:0}
 }
+
+/* 11. Coach (0.31): box checks, blind review, soft-locked weeks, "same box, new home". */
+#chkBtn,[data-rvc]{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+#chkBtn .gi,[data-rvc] .gi{width:13px;height:13px;stroke-width:1.8}
+.rvb{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rvself{display:inline-flex;gap:10px;font-size:13px;color:var(--label2)}
+.rvself .linkbtn{color:var(--label2)}
+.wk.soft .wt{opacity:.6}
+.wk .wn{position:relative}
+.wklk{position:absolute;right:-4px;bottom:-4px;width:14px;height:14px;border-radius:50%;display:grid;place-items:center;
+  background:var(--surface);box-shadow:0 0 0 1.5px var(--surface);color:var(--label2)}
+.wklk svg{width:9px;height:9px}
+body.kr-blind #app svg[data-geo],body.kr-blind #app .tiles svg,body.kr-blind #app .hero .notes{filter:blur(10px);opacity:.25;transition:filter .2s,opacity .2s}
+.homeTog{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:var(--label2)}
+.homeTog .seg{display:inline-flex;gap:2px;padding:3px;border-radius:999px;background:var(--surface2)}
+.homeTog .seg button{padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;color:var(--label2)}
+.homeTog .seg button.on{background:var(--surface);color:var(--label);box-shadow:0 1px 3px rgba(0,0,0,.12)}
