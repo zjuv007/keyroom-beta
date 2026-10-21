@@ -1205,6 +1205,7 @@ html.mdocked .side .sinst button i{width:30px;height:30px}
 <link rel="stylesheet" href="beta.css">
 <link rel="stylesheet" href="webgate.css">
 <link rel="stylesheet" href="polish.css">
+<link rel="stylesheet" href="design.css">
 </head>
 <body>
 <div class="frame"><aside class="side" id="side"></aside><main class="wrap" id="app"></main></div>
@@ -2807,8 +2808,9 @@ document.addEventListener('mouseover',e=>{const t=e.target;if(!t.closest)return;
 /* =====================================================================
    v0.5 FEATURE MODULE — every feature here sits behind a Labs flag
    ===================================================================== */
-const APP={v:'0.29.5',stage:'Beta'};
+const APP={v:'0.30.0',stage:'Beta'};
 const CHANGELOG=[
+  {v:'0.30.0',d:'2026-10-21',items:['Design pass on every screen: calmer sentence-case labels, steady numbers, a clear keyboard focus ring, controls that respond to a press','Frosted-glass header and view switch; neutral volume slider; Week 1 box drawn larger','Phones: the beta button floats as a small chip; card titles stay on one line']},
   {v:'0.29.5',d:'2026-10-21',items:['Now on iPhone and Android too: install from the download page, same features, works offline','Phones: the header floats as a glass bar while you scroll','Microphone help matches your device']},
   {v:'0.29.4',d:'2026-10-21',items:['Cleaner layout: icons and labels centred everywhere, drawn arrows and close buttons','Weeks list tells repeated scales apart; Learn · Play · Review stays in reach','Feedback without a GitHub account (Copy feedback), neutral “not yet” badges','Starts faster: instrument sounds load on first use']},
   {v:'0.29.3',d:'2026-10-21',items:['Windows app: rounded corners are back. No Windows title bar or square frame; the window is a rounded card with its own minimize, maximize and close buttons in the yellow band (drag the band to move it). The license screen is rounded too']},
@@ -4026,7 +4028,7 @@ render();
   new MutationObserver(function(){var t=document.querySelector('.frame .top');if(t&&!t.dataset.ph&&scrollY>32)upd()}).observe(document.getElementById('app')||document.body,{childList:true});
 })();
 </script>
-<script>window.KR_CFG={"version":"0.29.5","expiryIso":"2027-02-01T08:00:00Z","expiryLabel":"January 31, 2027","warnDays":14,"licenseVersion":"beta-1","copyright":"© 2026 Zach Juveli. All rights reserved.","repo":"https://github.com/zjuv007/keyroom-beta"};</script>
+<script>window.KR_CFG={"version":"0.30.0","expiryIso":"2027-02-01T08:00:00Z","expiryLabel":"January 31, 2027","warnDays":14,"licenseVersion":"beta-1","copyright":"© 2026 Zach Juveli. All rights reserved.","repo":"https://github.com/zjuv007/keyroom-beta"};</script>
 <script src="webgate.js"></script>
 <script src="beta.js"></script>
 <script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>

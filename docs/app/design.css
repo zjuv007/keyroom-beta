@@ -1,0 +1,65 @@
+/* Key Room — design refinements (0.30). Shared by the Windows and phone builds.
+   Baseline kept: yellow frame, Plus Jakarta Sans, black/yellow controls, the music colour code.
+   What changes is the system underneath: quieter labels, one focus language, tactile presses,
+   readable line lengths, steady numerals, glass for anything that floats. */
+
+/* 1. Type: section labels in sentence case, not tracked capitals.
+      They still read as labels through size, weight and colour. */
+.sgrp,.hero .hl small,.hnext small,.yp,.hch small,.songs small,.keypill small,.npbar,.npx small,.fqp small,
+.rclnow small,.flvl,.blink small,.rmh small,.mhd small,.mnext small,.clhl small,.clfam small,.lncap,.lnrh small,.lnkl,.lnpl{
+  text-transform:none!important;letter-spacing:-.005em!important;font-weight:650}
+.sgrp{font-size:12.5px}
+.yp{font-size:12.5px}
+.keypill small{font-size:12px;font-weight:600;color:var(--label2)}
+
+/* 2. Numbers never jiggle as they change (bpm, %, counts, timers). */
+body{font-feature-settings:"tnum" 1}
+.hero h2,.top h1{font-feature-settings:"tnum" 0}
+
+/* 3. Reading measure: explanatory lines stop at a comfortable width. */
+.lkwhy,.hint,.feel,.do,.ldesc{max-width:72ch}
+
+/* 4. One focus language for keyboard users: yellow ring with a dark edge, every control. */
+:where(button,[role=button],[role=tab],a,input,select,summary,label.btn,.hit):focus-visible{
+  outline:2px solid var(--acc,#FFD45C);outline-offset:2px;
+  box-shadow:0 0 0 5px color-mix(in srgb,var(--label) 22%,transparent)}
+
+/* 5. Tactile presses: controls dip slightly under the finger or cursor. */
+:where(.btn,.krb-btn,.pchip,.seg button,.vitog button,.snav button,.sinst button,.wk,.tile,.krb-list button,.keypill,.micbtn,.themebtn,.lnp,.clo,.xch,.uch,.rmap){
+  transition:transform .09s ease,background-color .15s ease,color .15s ease,box-shadow .15s ease}
+:where(.btn,.krb-btn,.pchip,.seg button,.vitog button,.snav button,.sinst button,.wk,.tile,.krb-list button,.keypill,.micbtn,.themebtn,.lnp,.clo,.xch,.uch,.rmap):active:not(:disabled){
+  transform:scale(.97)}
+
+/* 6. Accent discipline: the volume slider follows the text colour instead of a fourth accent green. */
+input[type=range],.hub .svol input{accent-color:var(--label)}
+
+/* 7. Glass for floating layers (desktop pinned header, view switch, popovers) — matches the phone header. */
+.top.stuck{background:color-mix(in srgb,var(--surface) 88%,transparent)!important;
+  -webkit-backdrop-filter:blur(26px) saturate(1.7);backdrop-filter:blur(26px) saturate(1.7)}
+.hvbar .seg{background:color-mix(in srgb,var(--surface) 80%,transparent);
+  -webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6)}
+
+/* 8. Week 1's single box: the diagram fills its tile instead of floating small in the middle. */
+.tiles[style*="--n:1"] .tch svg{max-height:150px}
+.tiles[style*="--n:1"] .tch .mchord{width:clamp(110px,46%,170px)}
+
+/* 9. Disabled controls look disabled, not just faded text. */
+:where(button,.btn):disabled{cursor:default;filter:saturate(.4)}
+
+@media (prefers-reduced-motion:reduce){
+  :where(.btn,.krb-btn,.pchip,.seg button,.vitog button,.snav button,.sinst button,.wk,.tile,.krb-list button,.keypill,.micbtn,.themebtn,.lnp,.clo,.xch,.uch,.rmap){transition:none}
+  :where(.btn,.krb-btn,.pchip,.seg button,.vitog button,.snav button,.sinst button,.wk,.tile,.krb-list button,.keypill,.micbtn,.themebtn,.lnp,.clo,.xch,.uch,.rmap):active{transform:none}
+}
+
+/* 10. Phones: the beta pill floats as a small glass chip above the tab bar instead of taking a whole row;
+       card headings keep their title on one line (helper text drops below). */
+@media (max-width:820px){
+  .side{overflow:visible}
+  .side .krb-pill{position:absolute;right:12px;top:-50px;width:auto;margin:0;padding:8px 12px;border-radius:999px;
+    background:color-mix(in srgb,var(--surface) 84%,transparent);-webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6);
+    box-shadow:0 8px 22px -10px rgba(0,0,0,.35),0 0 0 1px color-mix(in srgb,var(--label) 8%,transparent)}
+  .side .krb-pill .krb-dot{display:none}
+  .dh{flex-wrap:wrap;row-gap:4px}
+  .dh h3{white-space:nowrap}
+  .dh .lnct{flex-basis:100%;order:3;margin-left:0}
+}

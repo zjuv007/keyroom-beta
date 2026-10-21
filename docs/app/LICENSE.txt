@@ -1,5 +1,5 @@
 KEY ROOM — BETA END USER LICENSE AGREEMENT
-Beta build 0.29.5
+Beta build 0.30.0
 
 Copyright (c) 2026 Zach Juveli. All rights reserved.
 
