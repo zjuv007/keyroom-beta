@@ -1,0 +1,70 @@
+name: 💬 Beta feedback
+description: Tell me how Key Room worked for you (about 3 minutes)
+title: "[Feedback] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for trying the Key Room beta! Honest answers help most — "this confused me" is gold.
+  - type: dropdown
+    id: experience
+    attributes:
+      label: How long have you been playing guitar?
+      options: ["Less than 1 year", "1–3 years", "3–10 years", "10+ years"]
+    validations:
+      required: true
+  - type: checkboxes
+    id: practice
+    attributes:
+      label: How do you practice now?
+      options:
+        - label: YouTube
+        - label: Lessons / a teacher
+        - label: Other apps
+        - label: Books
+        - label: No real routine
+  - type: dropdown
+    id: ease
+    attributes:
+      label: How easy was it to get started? (1 = hard, 5 = easy)
+      options: ["1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    id: most_used
+    attributes:
+      label: Which part did you use most?
+      options: ["Home / Weekly", "Scales", "Chords / Builder", "Tools (tuner, metronome, sounds)"]
+  - type: dropdown
+    id: pace
+    attributes:
+      label: Is one scale per week the right pace?
+      options: ["Too slow", "About right", "Too fast", "Haven't used it long enough"]
+  - type: textarea
+    id: confusing
+    attributes:
+      label: What was confusing or broken?
+      description: Especially in the first 5 minutes.
+  - type: dropdown
+    id: disappointed
+    attributes:
+      label: How disappointed would you be if Key Room went away?
+      options: ["Very disappointed", "Somewhat disappointed", "Not disappointed"]
+    validations:
+      required: true
+  - type: dropdown
+    id: pay
+    attributes:
+      label: What would you pay for a finished version?
+      options: ["$0 — I'd only use it free", "About $5", "About $10", "$20 or more", "I'd prefer a small subscription"]
+  - type: textarea
+    id: anything
+    attributes:
+      label: Anything else?
+  - type: textarea
+    id: usage
+    attributes:
+      label: Usage report (optional)
+      description: Filled in automatically if you chose "Share with feedback" in the app. Feel free to delete anything before submitting.
+      render: text

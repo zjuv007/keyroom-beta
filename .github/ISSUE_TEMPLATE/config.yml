@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: ⬇ Download the latest Key Room beta
+    url: https://github.com/zjuv007/keyroom-beta/releases/latest
+    about: Installer and portable builds for Windows.
