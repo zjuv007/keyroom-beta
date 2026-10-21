@@ -1,0 +1,18 @@
+/* Mobile guardrail screens — match the Windows license window. */
+html.krg-open .krb-ovl{display:none}
+.krg{position:fixed;inset:0;z-index:500;background:#000;color:#F2F2F7;display:flex;align-items:stretch;justify-content:center;
+  padding:calc(env(safe-area-inset-top,0px) + 18px) 18px calc(env(safe-area-inset-bottom,0px) + 18px);font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.krg-card{width:100%;max-width:560px;display:flex;flex-direction:column;gap:12px;min-height:0}
+.krg-hd{display:flex;align-items:center;gap:12px}
+.krg-badge{width:48px;height:48px;border-radius:14px;background:#FFD45C;color:#111;display:grid;place-items:center;font-weight:800;font-size:24px;flex:none}
+.krg-hd b{display:block;font-size:20px;font-weight:800}.krg-hd i{font-style:normal;font-size:11px;letter-spacing:.06em;color:#FFD45C;background:#2C2C2E;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:3px}
+.krg-hd small{color:#8E8E93;font-size:13px}
+.krg h2{margin:12px 0 0;font-size:24px}
+.krg p{margin:0;font-size:15px;line-height:1.5;color:#C7C7CC}.krg p b{color:#FFD45C}
+.krg-pre{flex:1;min-height:120px;overflow:auto;margin:0;padding:14px;border-radius:14px;background:#1C1C1E;color:#D1D1D6;font:12px/1.55 ui-monospace,Menlo,monospace;white-space:pre-wrap}
+details .krg-pre{max-height:40vh}
+.krg-chk{display:flex;gap:10px;align-items:flex-start;font-size:14px}.krg-chk input{width:20px;height:20px;accent-color:#FFD45C;flex:none}
+.krg-btn{display:block;width:100%;text-align:center;text-decoration:none;border:0;border-radius:999px;padding:14px;font:inherit;font-weight:800;font-size:16px;background:#FFD45C;color:#111;cursor:pointer}
+.krg-btn:disabled{opacity:.35}
+.krg-foot{text-align:center;font-size:12px!important;color:#8E8E93!important}
+.krg summary{cursor:pointer;color:#FFD45C;font-weight:700;font-size:14px;margin-bottom:8px}

@@ -1,0 +1,66 @@
+KEY ROOM — BETA END USER LICENSE AGREEMENT
+Beta build 0.29.5
+
+Copyright (c) 2026 Zach Juveli. All rights reserved.
+
+By installing or using Key Room ("the Software"), you agree to these terms.
+If you do not agree, do not install or use the Software.
+
+1. LICENSE GRANT
+   You are granted a free, personal, non-exclusive, non-transferable,
+   revocable license to install and use the Software on devices you own,
+   for your own personal, non-commercial music practice, during the beta
+   period.
+
+2. BETA PERIOD
+   This beta license expires on January 31, 2027. After that date, the
+   right to use this beta version ends and the Software will stop
+   opening. A future version may be offered under different terms.
+
+3. RESTRICTIONS
+   You may NOT:
+   a. Copy, redistribute, share, re-upload, or mirror the Software or its
+      installer, in whole or in part.
+   b. Sell, rent, lease, sublicense, or otherwise commercialize the Software.
+   c. Modify, adapt, translate, or create derivative works of the Software,
+      including its code, interface design, graphics, or written content.
+   d. Decompile, disassemble, unpack, or reverse engineer the Software,
+      except to the extent such restriction is prohibited by law.
+   e. Remove or alter any copyright, trademark, or other notices.
+
+4. OWNERSHIP
+   The Software is licensed, not sold. All rights, title, and interest in
+   the Software — including its code, interface design, visual assets, and
+   written instructional content — remain with Zach Juveli.
+
+5. FEEDBACK
+   If you send feedback, suggestions, or ideas, you grant Zach Juveli a
+   perpetual, royalty-free right to use them to improve the Software
+   without obligation to you.
+
+6. PRIVACY
+   The Software runs locally and makes no network requests. Your practice
+   data stays on your device. To help improve the beta, the Software keeps
+   a usage summary on your device (screens and buttons used, time spent,
+   progress, and errors). It is never sent automatically. You can view,
+   pause, or clear it, and it is shared only if you choose to attach it
+   to your feedback.
+
+7. NO WARRANTY
+   THE SOFTWARE IS A BETA AND IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY
+   KIND, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A
+   PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IT MAY CONTAIN BUGS.
+
+8. LIMITATION OF LIABILITY
+   TO THE MAXIMUM EXTENT PERMITTED BY LAW, ZACH JUVELI SHALL NOT BE LIABLE
+   FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES, OR ANY
+   LOSS OF DATA, ARISING FROM USE OF THE SOFTWARE.
+
+9. TERMINATION
+   This license ends automatically if you breach these terms. On
+   termination, uninstall and delete all copies.
+
+10. GOVERNING LAW
+    These terms are governed by the laws of the State of Washington, USA.
+
+Contact and feedback: https://github.com/zjuv007/keyroom-beta/issues

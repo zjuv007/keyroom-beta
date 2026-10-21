@@ -1,0 +1,30 @@
+{
+  "name": "Key Room",
+  "short_name": "Key Room",
+  "version": "0.29.5",
+  "description": "Guitar practice — one scale per week, built up from minor pentatonic.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#FFD45C",
+  "theme_color": "#FFD45C",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
