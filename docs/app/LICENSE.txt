@@ -1,5 +1,5 @@
 KEY ROOM — BETA END USER LICENSE AGREEMENT
-Beta build 0.32.0
+Beta build 0.32.1
 
 Copyright (c) 2026 Zach Juveli. All rights reserved.
 
@@ -28,7 +28,8 @@ If you do not agree, do not install or use the Software.
       except to the extent such restriction is prohibited by law.
    e. Remove or alter any copyright, trademark, or other notices.
 
-4. OWNERSHIP
+4. OWNERSHIP AND TRADEMARK
+   "Key Room" is a trademark of Zach Juveli.
    The Software is licensed, not sold. All rights, title, and interest in
    the Software — including its code, interface design, visual assets, and
    written instructional content — remain with Zach Juveli.

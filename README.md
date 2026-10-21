@@ -1,6 +1,6 @@
 <p align="center"><img src="docs/icon.png" width="96" alt="Key Room icon"></p>
 
-<h1 align="center">Key Room — Beta</h1>
+<h1 align="center">Key Room™ — Beta</h1>
 
 <p align="center"><b>Learn guitar one scale per week, built up from minor pentatonic.</b><br>
 Free beta for Windows, iPhone and Android · runs offline · beta ends January 31, 2027</p>
@@ -25,8 +25,8 @@ Two versions, same app, same features, updated together.
 ### Windows (64-bit)
 
 1. Open **[Releases](../../releases/latest)** and download **one** file:
-   - `KeyRoom-Setup-0.32.0.exe` — installs with Start menu and desktop shortcuts *(recommended)*
-   - `KeyRoom-Portable-0.32.0.exe` — runs without installing
+   - `KeyRoom-Setup-0.32.1.exe` — installs with Start menu and desktop shortcuts *(recommended)*
+   - `KeyRoom-Portable-0.32.1.exe` — runs without installing
 2. Run it. Windows will probably show **"Windows protected your PC"** because this beta isn't code-signed yet. Click **More info → Run anyway**.
 3. Read and accept the beta license on first launch.
 
@@ -65,5 +65,5 @@ This repository holds the downloads and feedback. The phone version is served fr
 
 ---
 
-© 2026 Zach Juveli. All rights reserved. "Key Room" and its interface, code, graphics and lesson content are protected by copyright.
+© 2026 Zach Juveli. All rights reserved. Key Room™ is a trademark of Zach Juveli. Its interface, code, graphics and lesson content are protected by copyright.
 Plus Jakarta Sans font © its authors, used under the SIL Open Font License 1.1.
