@@ -227,7 +227,7 @@
       '<button data-a="copy"><span class="krb-li">' + IC.copy + '</span><span><b>Copy feedback</b><small>No account needed — paste it on Reddit</small></span></button>' +
       '<button data-a="bug"><span class="krb-li">' + IC.bug + '</span><span><b>Report a bug</b><small>Something broke or looked wrong</small></span></button>' +
       '<button data-a="usage"><span class="krb-li">' + IC.chart + '</span><span><b>View my usage report</b><small>What you\'ve used — stays on this device unless you share it</small></span></button>' +
-      '<button data-a="welcome"><span class="krb-li">' + IC.wave + '</span><span><b>Show the welcome tour</b><small>The 3-step intro again</small></span></button>' +
+      '<button data-a="welcome"><span class="krb-li">' + IC.wave + '</span><span><b>Start here</b><small>The 2-minute tour of how Key Room works</small></span></button>' +
       ((window.krDesk && window.krDesk.about) || window.krGate ? '<button data-a="about"><span class="krb-li">' + IC.info + '</span><span><b>About Key Room &amp; license</b><small>Version, beta end date, terms</small></span></button>' : '') +
       '</div>');
     m.querySelector('[data-x]').onclick = closeModal;
@@ -238,7 +238,7 @@
         if (a === 'copy') copyModal();
         if (a === 'bug') { openUrl(BUG + '&version=' + encodeURIComponent(VER)); closeModal(); }
         if (a === 'usage') usageModal();
-        if (a === 'welcome') welcome(0);
+        if (a === 'welcome') { if (window.krTutorial) { closeModal(); window.krTutorial(0); } else welcome(0); }
         if (a === 'about') { closeModal(); if (window.krDesk && window.krDesk.about) window.krDesk.about(); else if (window.krGate) window.krGate.about(); }
       };
     });
@@ -387,7 +387,7 @@
   // ---------------- start ----------------
   afterRender();
   setInterval(injectPill, 2000);
-  if (!U.welcome) setTimeout(function () { welcome(0); }, 600);
+  if (!U.welcome) setTimeout(function () { if (window.krTutorial) { U.welcome = true; save(); window.krTutorial(0); } else welcome(0); }, 600);
   else setTimeout(maybeCheckin, 45000);
 
   // Hidden hook for testing / support: window.__krBeta.report()

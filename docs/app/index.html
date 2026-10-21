@@ -1206,6 +1206,7 @@ html.mdocked .side .sinst button i{width:30px;height:30px}
 <link rel="stylesheet" href="webgate.css">
 <link rel="stylesheet" href="polish.css">
 <link rel="stylesheet" href="design.css">
+<link rel="stylesheet" href="starter.css">
 </head>
 <body>
 <div class="frame"><aside class="side" id="side"></aside><main class="wrap" id="app"></main></div>
@@ -2416,6 +2417,7 @@ function sideHTML(){
   const tab=(k,l)=>`<button data-tab="${k}" class="snv${UI.tab===k||(k==='weekly'&&UI.tab==='explore')||(k==='chords'&&UI.tab==='build')?' on':''}"><svg viewBox="0 0 20 20" aria-hidden="true">${SIDE_ICON[k]}</svg><span>${l}</span></button>`;
   return `<button class="brand" data-tab="weekly" aria-label="Key Room home"><span class="logo"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.5c4.4 0 7 1.6 7 4.6 0 4.2-4 9.4-7 10.4-3-1-7-6.2-7-10.4 0-3 2.6-4.6 7-4.6z" fill="currentColor"/></svg></span><b>Key Room</b></button>
   <nav class="snav" role="tablist" aria-label="Pages">${tab('weekly','Home')}${tab('learn','Scales')}${tab('chords','Chords')}<button class="snv sndbtn${UI.sndOpen?' on':''}" id="sndBtn" aria-expanded="${!!UI.sndOpen}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8h3l5-4v12l-5-4H3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 7.5a3.5 3.5 0 010 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Sound</span></button></nav>
+  <button class="snv tutnav" id="tutBtn"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 17.5V3M5.5 3.8h9l-2.2 3.6 2.2 3.6h-9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Start here</span></button>
   <div class="sgrp">Sound</div>
   <div class="sinst" role="group" aria-label="Instrument">${INSTS.map(([k,l])=>`<button data-inst="${k}" class="snv${SOUND.inst===k?' on':''}"><i><svg viewBox="0 0 16 16" aria-hidden="true">${INST_ICON[k]}</svg></i><span>${l}</span></button>${SOUND.inst===k&&SVAR[k]?`<div class="jmpu" role="group" aria-label="${SVAR[k][2]}">${SVAR[k][1].map(([v,l2])=>`<button data-sv="${SVAR[k][0]}" data-v="${v}" class="${(SOUND[SVAR[k][0]]||SVAR[k][1][0][0])===v?'on':''}">${l2}</button>`).join('')}</div>`:''}`).join('')}</div>
   ${hubHTML()}<div class="ver"><b>v${APP.v}</b> ${APP.stage}</div>`}
@@ -2812,8 +2814,9 @@ document.addEventListener('mouseover',e=>{const t=e.target;if(!t.closest)return;
 /* =====================================================================
    v0.5 FEATURE MODULE — every feature here sits behind a Labs flag
    ===================================================================== */
-const APP={v:'0.31.0',stage:'Beta'};
+const APP={v:'0.32.0',stage:'Beta'};
 const CHANGELOG=[
+  {v:'0.32.0',d:'2026-10-21',items:['Start here: a 2-minute visual tour on first launch. Tap the home note, hear the scale, see how a week works','Open it again any time from Start here in the sidebar, or Beta · Feedback on phones','New players see a Take the tour card on Home until their first box is learned']},
   {v:'0.31.0',d:'2026-10-21',items:['Pace: each week has 3 core boxes; boxes 4–5 are optional stretch. The next week unlocks when this week’s core boxes pass','Check a box by playing it up and down into the mic (no mic? mark it learned yourself)','Review checks play blind: no diagram, no next note. A miss steps back one level instead of starting over','Same box, new home: see any box with its relative root (E minor pentatonic = G major pentatonic)','Theory fixes: Phrygian dominant songs, Andalusian cadence, jazz ii–V–I, clearer box names']},
   {v:'0.30.0',d:'2026-10-21',items:['Design pass on every screen: calmer sentence-case labels, steady numbers, a clear keyboard focus ring, controls that respond to a press','Frosted-glass header and view switch; neutral volume slider; Week 1 box drawn larger','Phones: the beta button floats as a small chip; card titles stay on one line']},
   {v:'0.29.5',d:'2026-10-21',items:['Now on iPhone and Android too: install from the download page, same features, works offline','Phones: the header floats as a glass bar while you scroll','Microphone help matches your device']},
@@ -4033,10 +4036,11 @@ render();
   new MutationObserver(function(){var t=document.querySelector('.frame .top');if(t&&!t.dataset.ph&&scrollY>32)upd()}).observe(document.getElementById('app')||document.body,{childList:true});
 })();
 </script>
-<script>window.KR_CFG={"version":"0.31.0","expiryIso":"2027-02-01T08:00:00Z","expiryLabel":"January 31, 2027","warnDays":14,"licenseVersion":"beta-1","copyright":"© 2026 Zach Juveli. All rights reserved.","repo":"https://github.com/zjuv007/keyroom-beta"};</script>
+<script>window.KR_CFG={"version":"0.32.0","expiryIso":"2027-02-01T08:00:00Z","expiryLabel":"January 31, 2027","warnDays":14,"licenseVersion":"beta-1","copyright":"© 2026 Zach Juveli. All rights reserved.","repo":"https://github.com/zjuv007/keyroom-beta"};</script>
 <script src="webgate.js"></script>
 <script src="beta.js"></script>
 <script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
 <script src="coach.js"></script>
+<script src="starter.js"></script>
 </body>
 </html>
