@@ -21,8 +21,8 @@ Key Room is a focused guitar practice app. Instead of handing you every scale at
 ## Install (2 minutes)
 
 1. Open **[Releases](../../releases/latest)** and download **one** file:
-   - `KeyRoom-Setup-0.29.3.exe` — installs with Start menu and desktop shortcuts *(recommended)*
-   - `KeyRoom-Portable-0.29.3.exe` — runs without installing
+   - `KeyRoom-Setup-0.29.4.exe` — installs with Start menu and desktop shortcuts *(recommended)*
+   - `KeyRoom-Portable-0.29.4.exe` — runs without installing
 2. Run it. Windows will probably show **"Windows protected your PC"** because this beta isn't code-signed yet. Click **More info → Run anyway**.
 3. Read and accept the beta license on first launch.
 
@@ -35,7 +35,7 @@ Key Room is a focused guitar practice app. Instead of handing you every scale at
 2. What's confusing in the **first 5 minutes**?
 3. Would you pay a few dollars for a finished version?
 
-👉 **[Send feedback](../../issues/new?template=feedback.yml)** (about 3 minutes) — or tap **Beta · Feedback** in the app's sidebar.
+👉 **[Send feedback](../../issues/new?template=feedback.yml)** (about 3 minutes, needs a GitHub account) — or tap **Beta · Feedback → Copy feedback** in the app and paste it in the Reddit thread or a DM. No account needed.
 
 ## Privacy
 
