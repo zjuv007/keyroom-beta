@@ -26,8 +26,8 @@ Two versions, same app, same features, updated together.
 ### Windows (64-bit)
 
 1. Open **[Releases](../../releases/latest)** and download **one** file:
-   - `KeyRoom-Setup-0.46.5.exe` — installs with Start menu and desktop shortcuts *(recommended)*
-   - `KeyRoom-Portable-0.46.5.exe` — runs without installing
+   - `KeyRoom-Setup-0.47.0.exe` — installs with Start menu and desktop shortcuts *(recommended)*
+   - `KeyRoom-Portable-0.47.0.exe` — runs without installing
 2. Run it. Windows will probably show **"Windows protected your PC"** because this beta isn't code-signed yet. Click **More info → Run anyway**.
 3. Read and accept the beta license on first launch.
 
@@ -68,5 +68,5 @@ This repository holds the downloads and feedback. The phone version is served fr
 
 © 2026 Zach Juveli. All rights reserved. Key Room™ is a trademark of Zach Juveli. Its interface, code, graphics and lesson content are protected by copyright.
 Plus Jakarta Sans font © its authors, used under the SIL Open Font License 1.1.
-Sounds: Salamander Grand Piano V3 by Alexander Holm (CC BY 3.0); electric guitar, acoustic guitar and bass from tonejs-instruments by Nicholaus Brosowsky (CC BY 3.0).
+Sounds: Steinway & Sons Model B piano from the University of Iowa Electronic Music Studios (free to use without restrictions); electric guitar, acoustic guitar and bass from tonejs-instruments by Nicholaus Brosowsky (CC BY 3.0).
 Fonts: Plus Jakarta Sans by Tokotype and music signs from Noto Music by the Noto Project (both SIL Open Font License 1.1).
