@@ -17,7 +17,7 @@ Key Room is a focused guitar practice app. Instead of handing you every scale at
 - **Explore** — every scale's 5 shapes (or 7 three-per-string patterns) with arpeggios, any key, and how chords are built
 - **Create** — tap or strum chords, lock them into a progression, get the chords that fit next, jam over it, export MIDI
 - **Practice** — a guided Daily 10 and ear training
-- Five themes, recorded guitar sounds, metronome, tuner and chord identifier
+- Six themes, recorded guitar sounds, metronome, tuner and chord identifier
 
 ## Get it
 
@@ -26,8 +26,8 @@ Two versions, same app, same features, updated together.
 ### Windows (64-bit)
 
 1. Open **[Releases](../../releases/latest)** and download **one** file:
-   - `KeyRoom-Setup-0.40.4.exe` — installs with Start menu and desktop shortcuts *(recommended)*
-   - `KeyRoom-Portable-0.40.4.exe` — runs without installing
+   - `KeyRoom-Setup-0.41.0.exe` — installs with Start menu and desktop shortcuts *(recommended)*
+   - `KeyRoom-Portable-0.41.0.exe` — runs without installing
 2. Run it. Windows will probably show **"Windows protected your PC"** because this beta isn't code-signed yet. Click **More info → Run anyway**.
 3. Read and accept the beta license on first launch.
 
