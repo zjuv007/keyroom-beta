@@ -2,7 +2,7 @@
    Metric overrides: same 1.26em line box as the font's own metrics, but the cap height sits in the
    exact middle (the stock metrics sit text ~1.5px low in buttons and pills, worse with Windows' metrics). */
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400;font-display:swap;ascent-override:100.25%;descent-override:25.75%;line-gap-override:0%;src:url(pjs-400.woff2) format('woff2')}
-@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:500;font-display:swap;ascent-override:100.25%;descent-override:25.75%;line-gap-override:0%;src:url(pjs-500.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:500;font-display:swap;ascent-override:100.25%;descent-override:25.75%;line-gap-override:0%;src:url(pjs-400.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:600;font-display:swap;ascent-override:100.25%;descent-override:25.75%;line-gap-override:0%;src:url(pjs-600.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:700;font-display:swap;ascent-override:100.25%;descent-override:25.75%;line-gap-override:0%;src:url(pjs-700.woff2) format('woff2')}
 @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:800;font-display:swap;ascent-override:100.25%;descent-override:25.75%;line-gap-override:0%;src:url(pjs-800.woff2) format('woff2')}

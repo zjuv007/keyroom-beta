@@ -13,10 +13,11 @@ Free beta for Windows, iPhone and Android · runs offline · beta ends January 3
 
 Key Room is a focused guitar practice app. Instead of handing you every scale at once, it teaches **one scale per week**, in E, starting from the open position — and every new scale is shown as a change from **minor pentatonic**, the shape you already know.
 
-- **Home / Weekly** — this week's scale, its neck positions, progressions to play over, a practice timer and a roadmap
-- **Scales** — trace any scale across the whole neck and move between positions
-- **Chords** — chord shapes and a progression builder with "what to play over it"
-- **Tools** — metronome, tuner, note listener, drone, sounds (electric, acoustic, bass, piano, synth)
+- **Learn** — this week's scale, its boxes, mic checks that unlock the next week, and your roadmap
+- **Explore** — every scale's 5 shapes (or 7 three-per-string patterns) with arpeggios, any key, and how chords are built
+- **Create** — tap or strum chords, lock them into a progression, get the chords that fit next, jam over it, export MIDI
+- **Practice** — a guided Daily 10 and ear training
+- Five themes, recorded guitar sounds, metronome, tuner and chord identifier
 
 ## Get it
 
@@ -25,8 +26,8 @@ Two versions, same app, same features, updated together.
 ### Windows (64-bit)
 
 1. Open **[Releases](../../releases/latest)** and download **one** file:
-   - `KeyRoom-Setup-0.36.1.exe` — installs with Start menu and desktop shortcuts *(recommended)*
-   - `KeyRoom-Portable-0.36.1.exe` — runs without installing
+   - `KeyRoom-Setup-0.40.0.exe` — installs with Start menu and desktop shortcuts *(recommended)*
+   - `KeyRoom-Portable-0.40.0.exe` — runs without installing
 2. Run it. Windows will probably show **"Windows protected your PC"** because this beta isn't code-signed yet. Click **More info → Run anyway**.
 3. Read and accept the beta license on first launch.
 
@@ -67,3 +68,4 @@ This repository holds the downloads and feedback. The phone version is served fr
 
 © 2026 Zach Juveli. All rights reserved. Key Room™ is a trademark of Zach Juveli. Its interface, code, graphics and lesson content are protected by copyright.
 Plus Jakarta Sans font © its authors, used under the SIL Open Font License 1.1.
+Sounds: Salamander Grand Piano V3 by Alexander Holm (CC BY 3.0); electric guitar, acoustic guitar and bass from tonejs-instruments by Nicholaus Brosowsky (CC BY 3.0).
