@@ -69,3 +69,4 @@ This repository holds the downloads and feedback. The phone version is served fr
 © 2026 Zach Juveli. All rights reserved. Key Room™ is a trademark of Zach Juveli. Its interface, code, graphics and lesson content are protected by copyright.
 Plus Jakarta Sans font © its authors, used under the SIL Open Font License 1.1.
 Sounds: Salamander Grand Piano V3 by Alexander Holm (CC BY 3.0); electric guitar, acoustic guitar and bass from tonejs-instruments by Nicholaus Brosowsky (CC BY 3.0).
+Fonts: Plus Jakarta Sans by Tokotype and music signs from Noto Music by the Noto Project (both SIL Open Font License 1.1).
