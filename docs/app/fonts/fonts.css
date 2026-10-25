@@ -1,12 +1,9 @@
-/* Plus Jakarta Sans — SIL Open Font License 1.1 (see OFL.txt)
-   Metric overrides: same 1.26em line box as the font's own metrics, but the cap height sits in the
-   exact middle (the stock metrics sit text ~1.5px low in buttons and pills, worse with Windows' metrics). */
-@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400;font-display:swap;ascent-override:100.25%;descent-override:25.75%;line-gap-override:0%;src:url(pjs-400.woff2) format('woff2')}
-@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:500;font-display:swap;ascent-override:100.25%;descent-override:25.75%;line-gap-override:0%;src:url(pjs-400.woff2) format('woff2')}
-@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:600;font-display:swap;ascent-override:100.25%;descent-override:25.75%;line-gap-override:0%;src:url(pjs-600.woff2) format('woff2')}
-@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:700;font-display:swap;ascent-override:100.25%;descent-override:25.75%;line-gap-override:0%;src:url(pjs-700.woff2) format('woff2')}
-@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:800;font-display:swap;ascent-override:100.25%;descent-override:25.75%;line-gap-override:0%;src:url(pjs-800.woff2) format('woff2')}
-/* ♭ ♯ 𝄪 𝄫 — Plus Jakarta Sans has none, so without this each device borrowed them from a different system font
-   (thin, wrong height, wrong weight). Noto Music's accidentals (SIL OFL 1.1, see OFL-NotoMusic.txt), lifted and
-   sized onto this font's cap height. One file serves every weight. */
-@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400 800;font-display:swap;ascent-override:100.25%;descent-override:25.75%;line-gap-override:0%;src:url(krmusic.woff2) format('woff2');unicode-range:U+266D,U+266F,U+1D12A-1D12B}
+/* Inter 4 (rsms.me/inter) — SIL Open Font License 1.1 (see OFL-Inter.txt). One variable file: weights 100–900 and
+   optical sizes 14–32, so body text uses the open text cut and big headings switch to the tighter display cut by themselves.
+   Metric overrides keep the same 1.26em line box the app was laid out on, with the cap height centred exactly
+   (no text sitting low in buttons and pills, on any OS). */
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;ascent-override:99.375%;descent-override:26.625%;line-gap-override:0%;src:url(inter.woff2) format('woff2')}
+/* ♭ ♯ 𝄪 𝄫 — Inter's Latin set has none, so without this each device borrowed them from a different system font
+   (thin, wrong height, wrong weight). Noto Music's accidentals (SIL OFL 1.1, see OFL-NotoMusic.txt), sized onto the
+   cap height. One file serves every weight. */
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;ascent-override:99.375%;descent-override:26.625%;line-gap-override:0%;src:url(krmusic.woff2) format('woff2');unicode-range:U+266D,U+266F,U+1D12A-1D12B}
