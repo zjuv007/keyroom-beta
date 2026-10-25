@@ -21,12 +21,13 @@ Key Room is a focused guitar practice app. Instead of handing you every scale at
 
 <p align="center"><img src="docs/screenshot-create.png" width="80%" alt="Create: a progression in A minor, the chords that fit next, and the scale to jam with"></p>
 
-## New in 0.75
+## New in 0.76
 
 - **Your progression, front and center:** big numbered chord cards with their shapes, then the two things you need next: the scales to play over it and the best next chords
 - **Chord walk on the real neck:** every chord of the key as a chord chart, in order, tied to where it sits on the fretboard. Press play and watch it climb
 - **Follow the chords:** a clean neck that shows only what matters, plus a "Hear an example" demo
 - **Weeks show what changes:** each scale highlights its new notes and their degrees, so you see exactly what to learn
+- **Your color on the taskbar (Windows):** the app icon follows the accent color you pick
 - **Add is the big button** when you build a chord, and hovering a chord shows every place to play it
 
 ## Get it
@@ -36,8 +37,8 @@ Two versions, same app, same features, updated together.
 ### Windows (64-bit)
 
 1. Open **[Releases](../../releases/latest)** and download **one** file:
-   - `KeyRoom-Setup-0.75.0.exe` — installs with Start menu and desktop shortcuts *(recommended)*
-   - `KeyRoom-Portable-0.75.0.exe` — runs without installing
+   - `KeyRoom-Setup-0.76.0.exe` — installs with Start menu and desktop shortcuts *(recommended)*
+   - `KeyRoom-Portable-0.76.0.exe` — runs without installing
 2. Run it. Windows will probably show **"Windows protected your PC"** because this beta isn't code-signed yet. Click **More info → Run anyway**.
 3. Read and accept the beta license on first launch.
 
