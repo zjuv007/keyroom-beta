@@ -13,22 +13,23 @@ Free beta for Windows, iPhone and Android · runs offline · beta ends January 3
 
 Key Room is a focused guitar practice app. Instead of handing you every scale at once, it teaches **one scale per week**, in E, starting from the open position — and every new scale is shown as a change from **minor pentatonic**, the shape you already know.
 
-- **Learn** — this week's scale, its boxes, mic checks that unlock the next week, and your roadmap
+- **Learn** — this week's scale: hear it, learn its boxes, move them to other keys, play over chords, and review; mic checks unlock the next week
 - **Explore** — every scale's 5 shapes (or 7 three-per-string patterns) with arpeggios, any key, and how chords are built
 - **Create** — tap or strum chords (Chord ID names what you play), save ideas into projects, build a progression, see the chords that fit next and the scales to solo with, jam over it, export MIDI
-- **Practice** — a guided Daily 10 and ear training
+- **Practice** — Daily 10, your one routine (review, an exercise, ear training, jam)
 - A 1-minute hands-on tour on first launch, 13 themes with your own accent color, recorded guitar sounds, metronome, tuner and chord identifier
 
 <p align="center"><img src="docs/screenshot-create.png" width="80%" alt="Create: a progression in A minor, the chords that fit next, and the scale to jam with"></p>
 
-## New in 0.76
+## New in 0.77
 
-- **Your progression, front and center:** big numbered chord cards with their shapes, then the two things you need next: the scales to play over it and the best next chords
-- **Chord walk on the real neck:** every chord of the key as a chord chart, in order, tied to where it sits on the fretboard. Press play and watch it climb
-- **Follow the chords:** a clean neck that shows only what matters, plus a "Hear an example" demo
-- **Weeks show what changes:** each scale highlights its new notes and their degrees, so you see exactly what to learn
-- **Your color on the taskbar (Windows):** the app icon follows the accent color you pick
-- **Add is the big button** when you build a chord, and hovering a chord shows every place to play it
+- **A clearer course:** Pentatonic → Core scales (natural minor, Dorian, major pentatonic, major, Mixolydian) → Color (harmonic minor, Phrygian, Lydian). Progress moves with you
+- **Hear it first:** every week opens with its sound over a drone, and Week 1 starts with "How a scale works"
+- **Move it:** find the root on the low strings, then play the week's box in other keys
+- **Tempo ladder:** each clean mic check logs your speed per box: 60 → 80 → 100
+- **Call and response:** the app plays a phrase, you answer, aiming for home or the week's new note
+- **One daily routine (Daily 10)** and ear training by scale degree
+- **Create is one flow:** build → Add → your progression with the scales to play and the best next chords → Jam
 
 ## Get it
 
@@ -37,8 +38,8 @@ Two versions, same app, same features, updated together.
 ### Windows (64-bit)
 
 1. Open **[Releases](../../releases/latest)** and download **one** file:
-   - `KeyRoom-Setup-0.76.2.exe` — installs with Start menu and desktop shortcuts *(recommended)*
-   - `KeyRoom-Portable-0.76.2.exe` — runs without installing
+   - `KeyRoom-Setup-0.77.0.exe` — installs with Start menu and desktop shortcuts *(recommended)*
+   - `KeyRoom-Portable-0.77.0.exe` — runs without installing
 2. Run it. Windows will probably show **"Windows protected your PC"** because this beta isn't code-signed yet. Click **More info → Run anyway**.
 3. Read and accept the beta license on first launch.
 
