@@ -17,9 +17,14 @@ Key Room is a focused guitar practice app. Instead of handing you every scale at
 - **Explore** — every scale's 5 shapes (or 7 three-per-string patterns) with arpeggios, any key, and how chords are built
 - **Create** — tap or strum chords (Chord ID names what you play), save ideas into projects, build a progression, see the chords that fit next and the scales to solo with, jam over it, export MIDI
 - **Practice** — Daily 10, your one routine (review, an exercise, ear training, jam)
-- A "how a scale works" lesson to start, an optional 1-minute tour of the tools, 13 themes with your own accent color, recorded guitar sounds, metronome, tuner and chord identifier
+- A hands-on tour on first launch and short guides under the **?** button, 13 themes with your own accent color, recorded guitar sounds, metronome, tuner and chord identifier
 
 <p align="center"><img src="docs/screenshot-create.png" width="80%" alt="Create: a progression in A minor, the chords that fit next, and the scale to jam with"></p>
+
+## New in 0.78
+
+- **Grand tour on first launch:** the whole app in four chapters (the course, Explore, Create, Practice & tools), about 3 minutes, then Week 1
+- **Guides under ?:** replay the tour, or one short guide per idea whenever you need it
 
 ## New in 0.77
 
@@ -30,7 +35,6 @@ Key Room is a focused guitar practice app. Instead of handing you every scale at
 - **Call and response:** the app plays a phrase, you answer, aiming for home or the week's new note
 - **One daily routine (Daily 10)** and ear training by scale degree
 - **Create is one flow:** build → Add → your progression with the scales to play and the best next chords → Jam
-- **Course-first start (0.77.2):** the welcome leads with Start Week 1 and its "how a scale works" lesson; the tool tour is optional
 
 ## Get it
 
@@ -39,8 +43,8 @@ Two versions, same app, same features, updated together.
 ### Windows (64-bit)
 
 1. Open **[Releases](../../releases/latest)** and download **one** file:
-   - `KeyRoom-Setup-0.77.2.exe` — installs with Start menu and desktop shortcuts *(recommended)*
-   - `KeyRoom-Portable-0.77.2.exe` — runs without installing
+   - `KeyRoom-Setup-0.78.0.exe` — installs with Start menu and desktop shortcuts *(recommended)*
+   - `KeyRoom-Portable-0.78.0.exe` — runs without installing
 2. Run it. Windows will probably show **"Windows protected your PC"** because this beta isn't code-signed yet. Click **More info → Run anyway**.
 3. Read and accept the beta license on first launch.
 
