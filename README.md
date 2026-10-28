@@ -24,6 +24,7 @@ Key Room is a focused guitar practice app. Instead of handing you every scale at
 ## New in 0.81
 
 - **Guitar · Piano · Push:** a Push view that shows every fretboard as Ableton Push’s 8×8 pads
+- **Chords in any key:** Explore › Any scale shows the chords of the key in order, placed up the neck
 
 ## New in 0.80
 
@@ -55,8 +56,8 @@ Two versions, same app, same features, updated together.
 ### Windows (64-bit)
 
 1. Open **[Releases](../../releases/latest)** and download **one** file:
-   - `KeyRoom-Setup-0.81.1.exe` — installs with Start menu and desktop shortcuts *(recommended)*
-   - `KeyRoom-Portable-0.81.1.exe` — runs without installing
+   - `KeyRoom-Setup-0.81.2.exe` — installs with Start menu and desktop shortcuts *(recommended)*
+   - `KeyRoom-Portable-0.81.2.exe` — runs without installing
 2. Run it. Windows will probably show **"Windows protected your PC"** because this beta isn't code-signed yet. Click **More info → Run anyway**.
 3. Read and accept the beta license on first launch.
 
