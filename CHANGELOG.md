@@ -2,6 +2,15 @@
 
 Every version of the Key Room beta, newest first. The app shows the latest few under Settings › About › What’s new.
 
+## 0.85.0 · 2026-10-29
+
+- **Five steps a week**: Hear it → core boxes → connect them → make music → lock it in; they tick themselves and complete the week
+- **Placement**: start at week 1, 4 or 9
+- **Test out** of any skipped week with the mic
+- **Piano track**: right hand, left hand and two octaves with fingering and a mic check
+- **How to use it** line per week; speed ladder to 140 bpm
+- Tidier weeks: Licks with the backing tracks, no extra cards, every card labeled by step
+
 ## 0.84.0 · 2026-10-29
 
 - **Today** home: your next step with one button, streak, Review and roadmap, then Daily 10 and ear training
