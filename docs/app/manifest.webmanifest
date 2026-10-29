@@ -1,7 +1,7 @@
 {
   "name": "Key Room",
   "short_name": "Key Room",
-  "version": "0.81.2",
+  "version": "0.82.0",
   "description": "Guitar practice — one scale per week, built up from minor pentatonic.",
   "start_url": "./",
   "scope": "./",
