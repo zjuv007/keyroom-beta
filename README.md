@@ -5,7 +5,7 @@
 <p align="center"><b>Learn guitar one scale per week, built up from minor pentatonic.</b><br>
 Free beta for Windows, iPhone and Android · runs offline · beta ends January 31, 2027</p>
 
-<p align="center"><a href="#get-it"><b>⬇ Get Key Room</b></a> &nbsp;·&nbsp; <a href="../../issues/new?template=feedback.yml">💬 Send feedback</a> &nbsp;·&nbsp; <a href="../../issues/new?template=bug.yml">🐞 Report a bug</a></p>
+<p align="center"><a href="https://zjuv007.github.io/keyroom-beta/"><b>🌐 Website</b></a> &nbsp;·&nbsp; <a href="#get-it"><b>⬇ Get Key Room</b></a> &nbsp;·&nbsp; <a href="../../issues/new?template=feedback.yml">💬 Send feedback</a> &nbsp;·&nbsp; <a href="../../issues/new?template=bug.yml">🐞 Report a bug</a></p>
 
 <p align="center"><img src="docs/screenshot.png" width="72%" alt="Key Room on Windows: this week's scale, its boxes and your roadmap"> <img src="docs/screenshot-phone.png" width="22%" alt="Key Room on iPhone"></p>
 
@@ -23,6 +23,7 @@ Key Room is a focused guitar practice app. Instead of handing you every scale at
 
 ## New in 0.82
 
+- **A real website** (0.82.3): [zjuv007.github.io/keyroom-beta](https://zjuv007.github.io/keyroom-beta/), plus clearer fret markers, solid menus and a shorter Explore on phones
 - **Launch screen wears your theme** (0.82.2): same colours as the app behind it
 - Bigger chord pictures in Progression of the day (0.82.2)
 - **Progression of the day:** a flavourful progression in your key every day (borrowed chords, backdoor and tritone moves, line clichés), with why each chord works and one tap to load it into Create
@@ -62,8 +63,8 @@ Two versions, same app, same features, updated together.
 ### Windows (64-bit)
 
 1. Open **[Releases](../../releases/latest)** and download **one** file:
-   - `KeyRoom-Setup-0.82.2.exe` — installs with Start menu and desktop shortcuts *(recommended)*
-   - `KeyRoom-Portable-0.82.2.exe` — runs without installing
+   - `KeyRoom-Setup-0.82.3.exe` — installs with Start menu and desktop shortcuts *(recommended)*
+   - `KeyRoom-Portable-0.82.3.exe` — runs without installing
 2. Run it. Windows will probably show **"Windows protected your PC"** because this beta isn't code-signed yet. Click **More info → Run anyway**.
 3. Read and accept the beta license on first launch.
 

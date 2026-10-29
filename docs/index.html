@@ -1,4 +1,9 @@
-<!doctype html><meta charset="utf-8"><title>Key Room</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Key Room: learn guitar one scale a week</title>
 <meta name="description" content="Learn guitar one scale per week, built up from minor pentatonic. Free beta for iPhone, Android and Windows. Works offline.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Key Room">
@@ -13,4 +18,116 @@
 <meta name="twitter:title" content="Key Room: learn guitar one scale a week">
 <meta name="twitter:description" content="Learn guitar one scale per week, built up from minor pentatonic. Free beta for iPhone, Android and Windows. Works offline.">
 <meta name="twitter:image" content="https://zjuv007.github.io/keyroom-beta/preview.png">
-<meta http-equiv="refresh" content="0; url=app/"><a href="app/">Open Key Room</a>
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="app/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#FFD45C">
+<style>
+:root{--page:#FFD45C;--bg:#FAFAF7;--card:#FFFFFF;--ink:#111113;--ink2:#5E5E66;--line:rgba(17,17,19,.09);--acc:#FFD45C;--root:#F26A1B;--btn2:#EEEEF0}
+@media (prefers-color-scheme:dark){:root{--page:#1B1A14;--bg:#0F0F11;--card:#18181B;--ink:#F4F4F6;--ink2:#A2A2AA;--line:rgba(255,255,255,.09);--btn2:#26262B}}
+*{box-sizing:border-box}
+img{max-width:100%;height:auto}
+html{background:var(--page)}
+body{margin:0;padding:14px;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI Variable Text","Segoe UI",system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;background:var(--bg);border-radius:30px;padding:56px 40px 32px;overflow:hidden}
+@media (max-width:700px){body{padding:0}.wrap{border-radius:0;padding:36px 18px 24px}}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:18px;letter-spacing:-.01em}
+.brand img{width:40px;height:40px;border-radius:11px}
+.beta{font-size:11px;font-weight:800;letter-spacing:.06em;background:var(--acc);color:#111;padding:3px 9px;border-radius:999px}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;margin-top:44px}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:28px;margin-top:28px}}
+h1{margin:0;font-size:clamp(38px,6vw,64px);line-height:1.02;letter-spacing:-.035em;font-weight:850}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--acc) 62%,var(--acc) 92%,transparent 92%)}
+@media (prefers-color-scheme:dark){h1 em{background:none;color:var(--acc)}}
+.note a,footer a{color:var(--ink);font-weight:600}
+.lead{margin:18px 0 0;font-size:19px;line-height:1.5;color:var(--ink2);max-width:34ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.b{display:inline-flex;align-items:center;gap:9px;padding:15px 22px;border-radius:999px;font-weight:800;font-size:16px;text-decoration:none;color:var(--ink);background:var(--btn2);min-height:52px}
+.b.pri{background:var(--acc);color:#111}
+.b svg{width:18px;height:18px;flex:none}
+.b:focus-visible{outline:3px solid var(--root);outline-offset:3px}
+.facts{display:flex;flex-wrap:wrap;gap:6px 16px;margin:18px 0 0;padding:0;list-style:none;font-size:14px;color:var(--ink2)}
+.facts li::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--acc);margin-right:7px;vertical-align:1px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.shots{position:relative;padding-right:14%}
+.shots .desk{display:block;width:100%;border-radius:14px;box-shadow:0 30px 60px -28px rgba(0,0,0,.45),0 0 0 1px var(--line)}
+.shots .ph{position:absolute;right:0;bottom:-6%;width:26%;border-radius:18px;box-shadow:0 24px 50px -18px rgba(0,0,0,.5),0 0 0 5px #111}
+section{margin-top:72px}
+@media (max-width:700px){section{margin-top:48px}}
+h2{margin:0 0 8px;font-size:clamp(26px,3.4vw,34px);letter-spacing:-.025em}
+.sub{margin:0 0 22px;color:var(--ink2);font-size:17px;line-height:1.5;max-width:60ch}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.feat{grid-template-columns:1fr}}
+.f{background:var(--card);border-radius:22px;padding:18px;box-shadow:0 0 0 1px var(--line)}
+.f img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left;border-radius:12px;box-shadow:0 0 0 1px var(--line)}
+.f h3{margin:16px 0 6px;font-size:19px;letter-spacing:-.01em}
+.f p{margin:0;color:var(--ink2);font-size:15px;line-height:1.5}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.steps{grid-template-columns:1fr}}
+.s{background:var(--card);border-radius:22px;padding:20px;box-shadow:0 0 0 1px var(--line)}
+.s h3{margin:0 0 10px;font-size:18px;display:flex;align-items:center;gap:10px}
+.s h3 i{font-style:normal;width:30px;height:30px;border-radius:9px;background:var(--acc);color:#111;display:grid;place-items:center;font-size:15px}
+.s ol{margin:0;padding-left:20px;color:var(--ink2);font-size:15px;line-height:1.6}
+.s b{color:var(--ink)}
+.s .b{margin-top:14px;padding:11px 18px;min-height:44px;font-size:15px}
+.note{margin-top:12px;font-size:14px;color:var(--ink2)}
+.fb{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:var(--card);border-radius:22px;padding:22px;box-shadow:0 0 0 1px var(--line)}
+.fb p{margin:6px 0 0;color:var(--ink2);font-size:15px;line-height:1.5;max-width:58ch}
+footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--ink2)}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><img src="icon.png" alt="" width="40" height="40">Key Room<span class="beta">FREE BETA</span></div>
+
+  <div class="hero">
+    <div>
+      <h1>Learn the guitar neck, <em>one scale a week.</em></h1>
+      <p class="lead">Start with minor pentatonic. Each week adds one scale, shown as a small change from the shape you already know. Hear it, play it, check it with your mic.</p>
+      <div class="cta">
+        <a class="b pri" href="app/"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4.5l9 5.5-9 5.5z" fill="currentColor"/></svg>Open in your browser</a>
+        <a class="b" href="https://github.com/zjuv007/keyroom-beta/releases/latest"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m-4-4l4 4 4-4M4 16h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download for Windows</a>
+      </div>
+      <ul class="facts"><li>No account</li><li>Works offline</li><li>iPhone, Android, Windows</li><li>Free until January 31, 2027</li></ul>
+    </div>
+    <div class="shots">
+      <img class="desk" src="l-shot.webp" width="1600" height="1000" alt="Key Room on a laptop: Week 1, E minor pentatonic, with its boxes and your roadmap">
+      <img class="ph" src="l-shot-phone.webp" width="780" height="1688" alt="Key Room on a phone">
+    </div>
+  </div>
+
+  <section>
+    <h2>What's inside</h2>
+    <p class="sub">Four places, one idea: know where the notes are, then make music with them.</p>
+    <div class="feat">
+      <div class="f"><img src="l-crop-learn.webp" alt="Learn: this week's scale and its boxes" loading="lazy" width="1200" height="750"><h3>Learn</h3><p>This week's scale, box by box. Move it to other keys, play over backing tracks, and let your mic check you before the next week unlocks.</p></div>
+      <div class="f"><img src="l-crop-explore.webp" alt="Explore: every chord of A natural minor placed up the neck" loading="lazy" width="1200" height="750"><h3>Explore</h3><p>Any scale in any key: all five boxes, the whole neck, every chord of the key laid out up the neck, and a progression of the day.</p></div>
+      <div class="f"><img src="l-crop-create.webp" alt="Create: a progression in A minor, the scales that fit and the best next chords" loading="lazy" width="1200" height="750"><h3>Create</h3><p>Strum or tap chords and Key Room names them. Build a progression, see what to solo with and which chord fits next, then jam over it.</p></div>
+    </div>
+  </section>
+
+  <section id="get">
+    <h2>Get it in a minute</h2>
+    <p class="sub">Same app everywhere, updated together. Accept the short beta license the first time you open it.</p>
+    <div class="steps">
+      <div class="s"><h3><i>1</i>iPhone</h3><ol><li>Open this page in <b>Safari</b>.</li><li>Tap <b>Open in your browser</b>.</li><li>Tap <b>Share</b> → <b>Add to Home Screen</b>.</li></ol></div>
+      <div class="s"><h3><i>2</i>Android</h3><ol><li>Open this page in <b>Chrome</b>.</li><li>Tap <b>Open in your browser</b>.</li><li>Tap <b>⋮</b> → <b>Install app</b>.</li></ol></div>
+      <div class="s"><h3><i>3</i>Windows 10 / 11</h3><ol><li>Download <b>KeyRoom-Setup-0.82.3.exe</b>.</li><li>If Windows warns you, click <b>More info</b> → <b>Run anyway</b> (the beta isn't code-signed yet).</li></ol><a class="b" href="https://github.com/zjuv007/keyroom-beta/releases/latest">Download</a></div>
+    </div>
+    <p class="note">On a computer without installing? Just use <a href="app/">Open in your browser</a>. Your progress is saved on your device.</p>
+  </section>
+
+  <section>
+    <div class="fb">
+      <div><h2>Tell me what you think</h2><p>Is one scale a week the right pace? What confused you in the first five minutes? A sentence is plenty. You can also use <b>Send feedback</b> under the <b>?</b> button in the app.</p></div>
+      <a class="b pri" href="https://github.com/zjuv007/keyroom-beta/issues/new?template=feedback.yml">Send feedback</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>Key Room 0.82.3 beta · © 2026 Zach Juveli. All rights reserved.</span>
+    <a href="https://github.com/zjuv007/keyroom-beta/blob/main/LICENSE.txt">Beta license</a>
+    <span>Private: the app sends nothing anywhere.</span>
+  </footer>
+</div>
+</body>
+</html>
