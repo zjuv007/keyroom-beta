@@ -17,9 +17,17 @@ Key Room is a focused guitar practice app. Instead of handing you every scale at
 - **Explore** — every scale's 5 shapes (or 7 three-per-string patterns) with arpeggios, any key, and how chords are built
 - **Create** — tap or strum chords (Chord ID names what you play), save ideas into projects, build a progression, see the chords that fit next and the scales to solo with, jam over it, export MIDI
 - **Practice** — Daily 10, your one routine (review, an exercise, ear training, jam)
+- Left-handed mode and tuned-down guitars, shareable progression links and a printable scale sheet
 - A hands-on tour on first launch and short guides under the **?** button, 11 themes with your own accent color, recorded guitar sounds, metronome, tuner and chord identifier
 
 <p align="center"><img src="docs/screenshot-create.png" width="80%" alt="Create: a progression in A minor, the chords that fit next, and the scale to jam with"></p>
+
+## New in 0.83
+
+- **Left-handed mode** and **other tunings** (half step down, whole step down): Settings › Look › Your guitar
+- **Share a progression** as a link from Create
+- **Print sheet** in Explore: scale, five boxes, whole neck and chords of the key on one page
+- Full version history: [CHANGELOG.md](CHANGELOG.md)
 
 ## New in 0.82
 
@@ -63,8 +71,8 @@ Two versions, same app, same features, updated together.
 ### Windows (64-bit)
 
 1. Open **[Releases](../../releases/latest)** and download **one** file:
-   - `KeyRoom-Setup-0.82.3.exe` — installs with Start menu and desktop shortcuts *(recommended)*
-   - `KeyRoom-Portable-0.82.3.exe` — runs without installing
+   - `KeyRoom-Setup-0.83.0.exe` — installs with Start menu and desktop shortcuts *(recommended)*
+   - `KeyRoom-Portable-0.83.0.exe` — runs without installing
 2. Run it. Windows will probably show **"Windows protected your PC"** because this beta isn't code-signed yet. Click **More info → Run anyway**.
 3. Read and accept the beta license on first launch.
 
