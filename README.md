@@ -16,11 +16,18 @@ Key Room is a focused guitar practice app. Instead of handing you every scale at
 - **Learn** — this week's scale: hear it, learn its boxes, move them to other keys, play over chords, and review; mic checks unlock the next week
 - **Explore** — every scale's 5 shapes (or 7 three-per-string patterns) with arpeggios, any key, and how chords are built
 - **Create** — tap or strum chords (Chord ID names what you play), save ideas into projects, build a progression, see the chords that fit next and the scales to solo with, jam over it, export MIDI
-- **Practice** — Daily 10, your one routine (review, an exercise, ear training, jam)
+- **Today** — your next step, streak and roadmap, plus Daily 10: your one routine (review, an exercise, ear training, jam)
+- **Chords** — build any chord and learn how chords work, with a library of shapes
 - Left-handed mode and tuned-down guitars, shareable progression links and a printable scale sheet
 - A hands-on tour on first launch and short guides under the **?** button, 11 themes with your own accent color, recorded guitar sounds, metronome, tuner and chord identifier
 
 <p align="center"><img src="docs/screenshot-create.png" width="80%" alt="Create: a progression in A minor, the chords that fit next, and the scale to jam with"></p>
+
+## New in 0.84
+
+- **Today** is home: your next step, streak, Review and roadmap, then Daily 10
+- New menu: **Today · Learn · Explore · Chords · Create**, with **Tools** (tuner, metronome, Chord ID) always one tap away
+- **Learn** puts the lesson first; **Explore** is four tabs instead of one long page
 
 ## New in 0.83
 
@@ -71,8 +78,8 @@ Two versions, same app, same features, updated together.
 ### Windows (64-bit)
 
 1. Open **[Releases](../../releases/latest)** and download **one** file:
-   - `KeyRoom-Setup-0.83.0.exe` — installs with Start menu and desktop shortcuts *(recommended)*
-   - `KeyRoom-Portable-0.83.0.exe` — runs without installing
+   - `KeyRoom-Setup-0.84.0.exe` — installs with Start menu and desktop shortcuts *(recommended)*
+   - `KeyRoom-Portable-0.84.0.exe` — runs without installing
 2. Run it. Windows will probably show **"Windows protected your PC"** because this beta isn't code-signed yet. Click **More info → Run anyway**.
 3. Read and accept the beta license on first launch.
 

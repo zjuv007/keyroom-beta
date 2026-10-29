@@ -2,6 +2,15 @@
 
 Every version of the Key Room beta, newest first. The app shows the latest few under Settings › About › What’s new.
 
+## 0.84.0 · 2026-10-29
+
+- **Today** home: your next step with one button, streak, Review and roadmap, then Daily 10 and ear training
+- New main menu: **Today · Learn · Explore · Chords · Create**
+- **Tools** (tuner, metronome, Chord ID, sound) in one place; on phones it’s at the top of every page
+- **Learn** puts the lesson first: Boxes · Play · Review pinned at the top, All weeks as a drawer
+- **Explore** in four tabs: Scale, Chords, Progressions, Go deeper
+- Calmer screens: yellow means “do this”, selected options are the dark pill; Light/Dark in Settings
+
 ## 0.83.0 · 2026-10-29
 
 - **Left-handed mode**: Settings › Look › Your guitar mirrors every neck and chord chart
