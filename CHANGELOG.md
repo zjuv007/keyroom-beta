@@ -2,6 +2,15 @@
 
 Every version of the Key Room beta, newest first. The app shows the latest few under Settings › About › What’s new.
 
+## 0.86.0 · 2026-11-01
+
+- **Find a chord** (Chords): type any name, like Cm7, F♯7♭9, B♭maj9, Am7/G or “C minor sus2”, and press Enter; **/** jumps to the search
+- **Chords in a key**: pick a key (major or minor, triads or 7ths) and tap a chord; the row below lists more chords on that root that stay in the key
+- **Along the neck**: every playable shape of the chord, low to high, numbered on the neck with a chart for each; step with ‹ › or the arrow keys
+- Every chord has shapes now, not just the library ones; **Open in Builder** and **Save** use the shape you picked
+- Library: new **Sus** group and 14 more chords (7sus2, 9sus4, maj7♯11, maj13, m13, 7♯5, 7♭5, m6/9 and more)
+- Chord notes spelled properly (Cm7 = C E♭ G B♭)
+
 ## 0.85.0 · 2026-10-29
 
 - **Five steps a week**: Hear it → core boxes → connect them → make music → lock it in; they tick themselves and complete the week
